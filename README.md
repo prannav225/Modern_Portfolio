@@ -115,6 +115,6 @@ The project structure is organized into components for different sections of the
 - `styles/`: CSS stylesheets for styling the application.
 
 - `api/`: Contains a serverless function for handling email submissions.
-- 
+
 
 Thank you for viewing my portfolio. If you have any questions or encounter any issues, please feel free to reach out.
