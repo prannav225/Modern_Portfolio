@@ -2,9 +2,6 @@
 
 Welcome to my portfolio website, built using Next.js. This portfolio showcases my skills, projects, and contact information.
 
-## Sample Screenshots
-<img src="public\screenshots\screenshot_01.png" alt="portfolio_screenshot">
-
 ## Table of Contents
 
 - [Pranav's Portfolio](#pranavs-portfolio)
