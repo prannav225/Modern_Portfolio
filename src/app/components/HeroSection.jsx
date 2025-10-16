@@ -6,13 +6,13 @@ import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
-    const cvFilePath = "Pranav_Frontend_Resume.pdf";
+    const cvFilePath = "Pranav_Resume.pdf";
 
     // Create an anchor element to trigger the download
     const link = document.createElement("a");
     link.href = cvFilePath;
     link.target = "_blank";
-    link.download = "Pranav_Frontend_Resume.pdf";
+    link.download = "Pranav_Resume.pdf";
     link.click();
   };
   return (
@@ -47,9 +47,6 @@ const HeroSection = () => {
             Currently focused on IoT-based solutions at BeePrecise.
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <button className="px-8 py-4 w-full sm:w-fit bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 hover:from-yellow-600 hover:via-orange-400 hover:to-sky-500 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
-              Hire Me
-            </button>
             <button
               onClick={handleDownloadCV}
               className="px-8 py-4 w-full sm:w-fit rounded-full bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 hover:from-yellow-600 hover:via-orange-400 hover:to-sky-500 text-white font-semibold transition-all duration-300 transform hover:scale-105"
@@ -60,12 +57,14 @@ const HeroSection = () => {
         </div>
         <div className="order-1 lg:order-2 flex justify-center">
           <div className="relative rounded-full bg-gradient-to-br from-yellow-500 via-orange-300 to-sky-500 p-1 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 shadow-2xl shadow-yellow-500/20">
-            <div className="rounded-full bg-[#121212] w-full h-full flex items-center justify-center">
-              <div className="rounded-full bg-gradient-to-br from-gray-800 to-gray-900 w-[95%] h-[95%] flex items-center justify-center">
-                <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 bg-clip-text text-transparent">
-                  NP
-                </span>
-              </div>
+            <div className="rounded-full bg-[#121212] w-full h-full flex items-center justify-center overflow-hidden">
+              <Image
+                src="/images/hero_image.png"
+                alt="Naga Pranav M"
+                width={350}
+                height={350}
+                className="rounded-full object-cover"
+              />
             </div>
           </div>
         </div>
