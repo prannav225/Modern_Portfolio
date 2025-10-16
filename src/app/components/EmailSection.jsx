@@ -73,8 +73,8 @@ const EmailSection = () => {
           </h2>
           <div className="bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500 h-1 w-24 md:w-60 mx-auto rounded-full mb-6"></div>
           <p className="text-[#ADB7BE] max-w-2xl mx-auto text-lg">
-            I'm currently looking for new opportunities and my inbox is always open. 
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            I&apos;m currently looking for new opportunities and my inbox is always open. 
+            Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
           </p>
         </div>
         
@@ -148,7 +148,7 @@ const EmailSection = () => {
               
               {emailSubmitted && (
                 <p className="text-green-400 text-center py-4 px-6 bg-green-900/30 rounded-lg border border-green-800">
-                  Email sent successfully! I'll get back to you soon.
+                  Email sent successfully! I&apos;ll get back to you soon.
                 </p>
               )}
               
