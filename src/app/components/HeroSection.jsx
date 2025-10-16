@@ -16,56 +16,57 @@ const HeroSection = () => {
     link.click();
   };
   return (
-    <div>
-      <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
-          <h1 className="text-white lg:text-6xl text-3xl sm:text-4xl font-extrabold mb-4 mt-14">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500 ">
-              Hello I&apos;m{" "}
+    <div className="py-10 md:py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <div className="order-2 lg:order-1 text-center lg:text-left">
+          <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 mt-4 lg:mt-0">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500">
+              Hello, I&apos;m{" "}
             </span>
             <br />
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                "Pranav",
+                "Naga Pranav M",
                 3000, // interval
-                "Frontend Developer",
+                "Software Developer",
                 2000,
-                "Web Developer",
+                "Full Stack Developer",
+                2000,
+                "React Developer",
                 2000,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
+              className="inline-block"
             />
           </h1>
-          <p className="text-[#ADB7BE] sm:text-lg lg:text-md mb-6 text-base">
-            A Web Dev - dedicated to crafting user-centric interfaces that not
-            only look great but also enhance the overall user experience.
+          <p className="text-[#ADB7BE] text-lg lg:text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
+            Software Developer specializing in building exceptional digital experiences with React.js, Nest.js, and modern web technologies. 
+            Currently focused on IoT-based solutions at BeePrecise.
           </p>
-          <div className="">
-            <button className="px-6 py-3 w-full sm:w-fit m-2 sm:m-1 bg-gradient-to-bl from-yellow-500 via-orange-300 to-sky-400 hover:bg-slate-200 rounded-full">
+          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <button className="px-8 py-4 w-full sm:w-fit bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 hover:from-yellow-600 hover:via-orange-400 hover:to-sky-500 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
               Hire Me
             </button>
             <button
               onClick={handleDownloadCV}
-              className="px-1 py-1 w-full sm:w-fit m-2 sm:m-1 rounded-full bg-gradient-to-bl from-yellow-500 via-orange-300 to-sky-400 hover:bg-slate-200 hover:text-black"
+              className="px-8 py-4 w-full sm:w-fit rounded-full bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 hover:from-yellow-600 hover:via-orange-400 hover:to-sky-500 text-white font-semibold transition-all duration-300 transform hover:scale-105"
             >
-              <span className="block bg-[#121212] rounded-full px-5 py-2 text-white">
-                Download CV
-              </span>
+              Download CV
             </button>
           </div>
         </div>
-        <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:h-[400px] lg:w-[400px] relative shadow-lg shadow-yellow-200 hover:scale-105 transition-all cursor-pointer hover:bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500 ">
-            <Image
-              src="/images\hero_image.png"
-              alt="hero_image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
-            />
+        <div className="order-1 lg:order-2 flex justify-center">
+          <div className="relative rounded-full bg-gradient-to-br from-yellow-500 via-orange-300 to-sky-500 p-1 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 shadow-2xl shadow-yellow-500/20">
+            <div className="rounded-full bg-[#121212] w-full h-full flex items-center justify-center">
+              <div className="rounded-full bg-gradient-to-br from-gray-800 to-gray-900 w-[95%] h-[95%] flex items-center justify-center">
+                <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 bg-clip-text text-transparent">
+                  NP
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
