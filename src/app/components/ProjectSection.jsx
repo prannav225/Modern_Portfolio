@@ -4,51 +4,51 @@ import ProjectCard from "./ProjectCard";
 const ProjectsData = [
   {
     id: 1,
-    image: "/projects/Food_App.png",
-    title: "Food Delivery App",
-    description: "Responsive web application for food ordering with real-time tracking features and payment integration",
+    image: "/projects/getransfr.jpg",
+    title: "Getransfr - P2P File Sharing",
+    description: "High-performance P2P file-sharing platform with WebRTC data channels, real-time discovery, and drag-and-drop support.",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/prannav225/FoodApp_Front-end",
+    gitUrl: "https://getransfr.vercel.app",
   },
   {
     id: 2,
-    image: "/projects/LMS.png",
-    title: "Library Management System",
-    description: "Comprehensive library management solution with inventory tracking, user management, and book reservation system",
+    image: "/projects/Youtube_Clone.jpg",
+    title: "YouTube Clone",
+    description: "YouTube-style video streaming interface with search, playback, and category filtering using RapidAPI.",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/prannav225/LibraryManagementSystem",
+    gitUrl: "https://github.com/prannav225/youtube-clone",
   },
   {
     id: 3,
-    image: "/projects/Task_Tracker.png",
-    title: "Task Tracker Application",
-    description: "Productivity tool for team task management with real-time collaboration features and progress tracking",
+    image: "/projects/beyondental.jpg",
+    title: "Beyond Dental Website",
+    description: "Modern, responsive business website for a dental clinic with appointment sections and SEO optimization.",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/prannav225/TaskTracker-Frontend",
+    gitUrl: "https://beyondental.in/",
   },
   {
     id: 4,
-    image: "/projects/Truck_Tracker.png",
-    title: "Truck Tracker",
-    description: "Logistics management system for real-time vehicle tracking and fleet management with geolocation services",
+    image: "/projects/pragathi_computers.jpg", 
+    title: "Pragathi Computers",
+    description: "Business website for a computer retail & services provider designed to improve local discoverability.",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/prannav225/Truck_Tracker_App",
+    gitUrl: "https://pragathicomputers.com/",
   },
   {
     id: 5,
-    image: "/projects/Youtube_Clone.png",
-    title: "Youtube Clone",
-    description: "Video streaming platform with user authentication, video upload functionality, and recommendation system",
+    image: "/projects/eai.jpg",
+    title: "Electronix AI",
+    description: "AI-powered hardware design tool offering instant datasheet analysis, smart component selection, and debugging insights.",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/prannav225/MyTube",
+    gitUrl: "https://electronix.ai/",
   },
   {
     id: 6,
-    image: "/projects/Beyondental.png",
-    title: "Beyond Dental Website",
-    description: "Professional dental clinic website with appointment booking system and treatment information",
+    image: "/projects/buildrn.jpg",
+    title: "Build Right Now",
+    description: "Media platform and playbook for tech founders, deconstructing how great companies are built through storytelling and frameworks.",
     tag: ["All", "Web"],
-    gitUrl: "https://beyondental.in/",
+    gitUrl: "https://buildrightnow.com/",
   },
 ];
 const ProjectSection = () => {
@@ -59,10 +59,9 @@ const ProjectSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             My Projects
           </h2>
-          <div className="bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500 h-1 w-24 md:w-52 mx-auto rounded-full mb-6"></div>
-          <p className="text-[#ADB7BE] max-w-2xl mx-auto text-lg">
-            Explore my portfolio of projects showcasing my skills in full-stack development, 
-            IoT solutions, and modern web technologies.
+          <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-1 w-24 md:w-52 mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            A selection of projects ranging from web applications to hardware design tools, showcasing my expertise in modern technologies.
           </p>
         </div>
         

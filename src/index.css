@@ -44,12 +44,52 @@ body {
 /* Background Gradients */
 .bg-glow {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  width: 100vw;
+  height: 100vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(
+    circle at center,
+    rgba(139, 92, 246, 0.15) 0%,
+    rgba(139, 92, 246, 0.08) 30%,
+    rgba(139, 92, 246, 0.03) 60%,
+    rgba(0, 0, 0, 0) 75%
+  );
   border-radius: 50%;
   pointer-events: none;
   z-index: -1;
+  filter: blur(140px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+.bg-glow-blue {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(
+    circle at center,
+    rgba(56, 189, 248, 0.15) 0%,
+    rgba(56, 189, 248, 0.08) 30%,
+    rgba(56, 189, 248, 0.03) 60%,
+    transparent 75%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(140px);
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .bg-glow, .bg-glow-blue {
+    width: 150vw;
+    height: 150vw;
+    filter: blur(100px);
+    opacity: 0.4;
+  }
 }
 
 /* Scrollbar */

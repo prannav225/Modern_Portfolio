@@ -1,14 +1,9 @@
-"use client";
-
-import Image from "next/image";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
     const cvFilePath = "Pranav_Resume.pdf";
-
-    // Create an anchor element to trigger the download
     const link = document.createElement("a");
     link.href = cvFilePath;
     link.target = "_blank";
@@ -16,54 +11,62 @@ const HeroSection = () => {
     link.click();
   };
   return (
-    <div className="py-10 md:py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+    <div className="section-min-height flex items-center justify-center relative">
+      <div className="bg-glow top-0 left-0 transform -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="bg-glow-blue bottom-0 right-0 transform translate-x-1/2 translate-y-1/2"></div>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full z-10">
         <div className="order-2 lg:order-1 text-center lg:text-left">
-          <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 mt-4 lg:mt-0">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500">
-              Hello, I&apos;m{" "}
+          <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+            I build things for{" "}
+            <span className="text-gradient">
+              the web
             </span>
-            <br />
+          </h1>
+          <div className="text-2xl sm:text-3xl text-gray-400 mb-8 font-light h-[60px]">
+             I am a{" "}
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
-                "Naga Pranav M",
-                3000, // interval
-                "Software Developer",
+                "FrontendDeveloper",
                 2000,
-                "Full Stack Developer",
+                "Creative Engineer",
                 2000,
-                "React Developer",
+                "React Specialist",
                 2000,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="inline-block"
+              className="text-white font-medium"
             />
-          </h1>
-          <p className="text-[#ADB7BE] text-lg lg:text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
-            Software Developer specializing in building exceptional digital experiences with React.js, Nest.js, and modern web technologies. 
-            Currently focused on IoT-based solutions at BeePrecise.
+          </div>
+          <p className="text-gray-400 text-lg lg:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Software Developer with 2+ years of experience creating modern, reliable, and user-focused web applications. 
+            Dedicated to building clean interfaces and elevating overall product quality. Currently open to new opportunities.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
               onClick={handleDownloadCV}
-              className="px-8 py-4 w-full sm:w-fit rounded-full bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 hover:from-yellow-600 hover:via-orange-400 hover:to-sky-500 text-white font-semibold transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-all duration-300 transform hover:-translate-y-1"
             >
               Download CV
             </button>
+            <a
+              href="#contact"
+              className="px-8 py-4 rounded-full border border-gray-600 text-white font-semibold hover:bg-white hover:text-black transition-all duration-300"
+            >
+              Contact Me
+            </a>
           </div>
         </div>
-        <div className="order-1 lg:order-2 flex justify-center">
-          <div className="relative rounded-full bg-gradient-to-br from-yellow-500 via-orange-300 to-sky-500 p-1 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 shadow-2xl shadow-yellow-500/20">
-            <div className="rounded-full bg-[#121212] w-full h-full flex items-center justify-center overflow-hidden">
-              <Image
-                src="/images/hero_image.png"
+        <div className="order-1 lg:order-2 flex justify-center relative w-full">
+          <div className="relative w-full max-w-[500px] sm:max-w-[400px] lg:max-w-[450px] aspect-square z-10">
+            <div className="absolute -inset-20 bg-[radial-gradient(circle at center,rgba(168,85,247,0.25) 0%,rgba(6,182,212,0.12) 35%,rgba(6,182,212,0.05) 60%,transparent 85%)] rounded-full blur-[100px] opacity-40 animate-pulse"></div>
+            <div className="relative w-full h-full rounded-full border-2 border-gray-800 bg-[#0a0a0a] overflow-hidden">
+               <img
+                src="/images/hero.jpeg"
                 alt="Naga Pranav M"
-                width={350}
-                height={350}
-                className="rounded-full object-cover"
+                className="object-cover w-full h-full"
               />
             </div>
           </div>

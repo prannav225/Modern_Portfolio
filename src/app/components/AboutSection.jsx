@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 
@@ -8,21 +7,32 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 list-disc pl-5 pr-4">
-        <li>JavaScript (ES6+)</li>
-        <li>React.js</li>
-        <li>Nest.js</li>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>HTML, CSS</li>
-        <li>Tailwind CSS</li>
-        <li>MongoDB</li>
-        <li>REST API</li>
-        <li>Git, GitHub</li>
-        <li>Figma</li>
-        <li>WordPress</li>
-        <li>React Native</li>
-      </ul>
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-bold text-white mb-2">Frontend</h4>
+          <ul className="flex flex-wrap gap-2">
+            {["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "HTML5", "CSS3", "Vite", "Redux", "React Router", "Responsive UI"].map(skill => (
+              <span key={skill} className="px-3 py-1 bg-purple-900/40 rounded-full text-sm text-purple-200 border border-purple-500/30 hover:border-purple-500 transition-colors cursor-default">{skill}</span>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-bold text-white mb-2">Backend</h4>
+          <ul className="flex flex-wrap gap-2">
+             {["Node.js", "Express.js", "Nest.js", "REST APIs", "Socket.IO", "WebRTC signaling"].map(skill => (
+              <span key={skill} className="px-3 py-1 bg-blue-900/40 rounded-full text-sm text-blue-200 border border-blue-500/30 hover:border-blue-500 transition-colors cursor-default">{skill}</span>
+            ))}
+          </ul>
+        </div>
+         <div>
+          <h4 className="font-bold text-white mb-2">Tools & Others</h4>
+          <ul className="flex flex-wrap gap-2">
+             {["Git", "GitHub", "WebSockets", "Figma", "Postman", "CI/CD basics", "WordPress", "JSON", "JWT Auth"].map(skill => (
+              <span key={skill} className="px-3 py-1 bg-gray-800/60 rounded-full text-sm text-gray-300 border border-gray-600/30 hover:border-gray-500 transition-colors cursor-default">{skill}</span>
+            ))}
+          </ul>
+        </div>
+      </div>
     ),
   },
   {
@@ -30,30 +40,10 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="space-y-4">
-        <li>
-          <div className="font-bold text-xl text-yellow-400">B.Sc. Computer Science</div>
-          <div className="text-lg">Vijaya College, Bengaluru</div>
-          <div className="text-[#ADB7BE]">CGPA: 7.2 (2018–2022)</div>
-        </li>
-      </ul>
-    ),
-  },
-  {
-    title: "Certifications",
-    id: "certification",
-    content: (
-      <ul className="space-y-4">
-        <li>
-          <div className="font-bold text-lg">Product Management Basics</div>
-          <div className="text-[#ADB7BE]">Pendo.io (Feb 2025)</div>
-        </li>
-        <li>
-          <div className="font-bold text-lg">AI for Product Management</div>
-          <div className="text-[#ADB7BE]">Pendo.io (Aug 2025)</div>
-        </li>
-        <li>
-          <div className="font-bold text-lg">React JS</div>
-          <div className="text-[#ADB7BE]">Infosys Springboard (Jul 2023)</div>
+        <li className="bg-white/5 p-4 rounded-xl border border-white/10">
+          <div className="font-bold text-xl text-purple-400">Bachelor of Science [PMCs]</div>
+          <div className="text-lg text-white">Vijaya College, Bengaluru</div>
+          <div className="text-gray-400">2018 – 2022</div>
         </li>
       </ul>
     ),
@@ -63,23 +53,32 @@ const TAB_DATA = [
     id: "experience",
     content: (
       <ul className="space-y-6">
-        <li>
-          <div className="font-bold text-xl text-yellow-400">Software Developer</div>
-          <div className="text-lg">BeePrecise (AI-Powered AgriTech Startup)</div>
-          <div className="text-[#ADB7BE] mb-2">Bengaluru, India | Oct 2023 – Present</div>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Built and optimized full-stack modules for IoT-based beehive monitoring (React.js, Nest.js)</li>
-            <li>Developed real-time dashboards for beehive health monitoring</li>
-            <li>Integrated AI based prediction of beehive health based on the parameters collected</li>
-            <li>Integrated hardware-software solutions, presented at Krishi Mela 2024</li>
+        <li className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-purple-500/30 transition-colors">
+          <div className="flex flex-col md:flex-row justify-between md:items-center mb-2">
+            <div className="font-bold text-xl text-purple-400">Software Developer</div>
+            <div className="text-gray-400 text-sm">Oct 2023 – Nov 2025</div>
+          </div>
+          <div className="text-lg text-white mb-2">BeePrecise</div>
+          <div className="text-gray-400 text-sm mb-4">Bengaluru, India</div>
+          <ul className="list-disc pl-5 space-y-2 text-gray-300">
+            <li>Built and optimized full-stack modules for IoT-based beehive monitoring using React.js and Nest.js.</li>
+            <li>Developed real-time dashboards visualizing hive health, temperature, humidity, and sensor analytics.</li>
+            <li>Integrated AI-based prediction systems that classify hive health using ML-generated outputs.</li>
+            <li>Collaborated with hardware engineers to integrate sensor devices and cloud services, showcased at Krishi Mela 2024.</li>
+            <li>Improved UI/UX consistency and reduced dashboard load times using optimized API calls and caching.</li>
           </ul>
         </li>
-        <li>
-          <div className="font-bold text-xl text-yellow-400">Project Participation</div>
-          <div className="text-lg">Electronix AI (2025)</div>
-          <ul className="list-disc pl-5 space-y-1 mt-2">
-            <li>Participated in early-stage brainstorming and ideation sessions</li>
-            <li>Contributing to foundational concepts for SaaS solutions in electronics co-engineering</li>
+        <li className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-purple-500/30 transition-colors">
+          <div className="flex flex-col md:flex-row justify-between md:items-center mb-2">
+            <div className="font-bold text-xl text-purple-400">Founding Team Member</div>
+            <div className="text-gray-400 text-sm">2025</div>
+          </div>
+          <div className="text-lg text-white mb-2">Electronix AI</div>
+          <div className="text-gray-400 text-sm mb-4">Bengaluru, India</div>
+          <ul className="list-disc pl-5 space-y-2 text-gray-300">
+            <li>Contributed to early-stage product design and architecture for AI-driven electronics co-engineering tools.</li>
+            <li>Participated in brainstorming features for SaaS workflows, automation pipelines, and developer tooling.</li>
+            <li>Explored feasibility of deep-learning integrations, custom datasets, and automation modules.</li>
           </ul>
         </li>
       </ul>
@@ -88,8 +87,8 @@ const TAB_DATA = [
 ];
 
 const AboutSection = () => {
-  let [tab, setTab] = useState("skills");
-  let [ispending, startTransition] = useTransition();
+  const [tab, setTab] = useState("skills");
+  const [, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
     startTransition(() => {
@@ -97,52 +96,34 @@ const AboutSection = () => {
     });
   };
   return (
-    <section id="about" className="py-16 md:py-24">
+    <section id="about" className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500 h-1 w-24 md:w-44 mx-auto rounded-full"></div>
-        </div>
-        
-        <div className="md:grid md:grid-cols-2 gap-12 items-center">
-          <div className="mb-12 md:mb-0 flex justify-center">
-            <div className="relative rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-1 w-64 h-64 md:w-80 md:h-80 shadow-2xl shadow-yellow-500/10">
-              <div className="rounded-2xl bg-[#121212] w-full h-full flex items-center justify-center">
-                <Image
-                  alt="about_image"
-                  src="/images\about_image.png"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-2xl"
-                />
-              </div>
-            </div>
+        <div className="md:grid md:grid-cols-2 gap-16 items-center">
+          <div className="mb-12 md:mb-0 relative flex justify-center">
+             <div className="relative w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[450px] aspect-square z-10">
+                <div className="absolute -inset-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-2xl opacity-40"></div>
+                <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-700 bg-black">
+                  <img
+                    alt="about_image"
+                    src="/images/about.jpeg"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+             </div>
           </div>
           
-          <div className="mt-4 md:mt-0">
-            <p className="text-base lg:text-lg text-justify mb-8">
-              Hello there! I&apos;m Naga Pranav M, a passionate software developer
-              based in Bengaluru, India. With expertise in React.js, Nest.js, and modern web technologies,
-              I specialize in building exceptional digital experiences. Currently, I&apos;m working at BeePrecise,
-              an AI-powered AgriTech startup, where I develop full-stack solutions for IoT-based beehive monitoring systems.
-              My goal is to combine creativity with technical skills to build websites and web applications that leave a 
-              lasting impression. Let&apos;s connect and embark on a journey to create exceptional digital
-              experiences that make a difference. Feel free to reach out via email
-              at{" "}
-              <span className="font-bold text-yellow-500">
-                nagapranav.m@gmail.com
-              </span>{" "}
-              or connect with me on{" "}
-              <a
-                href="https://www.linkedin.com/in/prannav-m/"
-                className="font-bold text-yellow-400 hover:underline underline-offset-4 decoration-blue-500"
-              >
-                LinkedIn
-              </a>
-              .
+          <div className="mt-4 md:mt-0 text-left">
+            <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-3">
+              About Me 
+              <span className="h-1 w-20 bg-purple-500 rounded-full block"></span>
+            </h2>
+            <p className="text-base lg:text-lg text-gray-400 mb-8 leading-relaxed">
+              I am a dedicated software developer based in Bengaluru, India, specializing in building high-performance 
+              applications using <span className="text-white font-medium">React.js</span>, <span className="text-white font-medium">Nest.js</span>, and modern web technologies. 
+              My journey involves turning complex problems into simple, beautiful, and intuitive designs. Previously, I contributed to building IoT-based solutions at an AgriTech startup.
             </p>
             
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-8 border-b border-gray-700 pb-2">
               <TabButton
                 selectTab={() => handleTabChange("skills")}
                 active={tab === "skills"}
@@ -156,12 +137,6 @@ const AboutSection = () => {
                 Education
               </TabButton>
               <TabButton
-                selectTab={() => handleTabChange("certification")}
-                active={tab === "certification"}
-              >
-                Certifications
-              </TabButton>
-              <TabButton
                 selectTab={() => handleTabChange("experience")}
                 active={tab === "experience"}
               >
@@ -169,7 +144,7 @@ const AboutSection = () => {
               </TabButton>
             </div>
             
-            <div className="mt-4 bg-gray-800/50 p-6 rounded-2xl border border-gray-700 transition-all duration-300">
+            <div className="mt-4 transition-all duration-300 min-h-[200px]">
               {TAB_DATA.find((t) => t.id === tab).content}
             </div>
           </div>

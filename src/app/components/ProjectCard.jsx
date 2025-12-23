@@ -1,31 +1,29 @@
 import React from "react";
 import { CodeBracketIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl }) => {
   return (
-    <div className="shadow-xl transition-all duration-300 hover:scale-[1.02] rounded-2xl overflow-hidden bg-gray-800/30 border border-gray-700">
-      <div
-        className="h-48 md:h-56 rounded-t-2xl relative group"
-        style={{
-          background: `url(${imgUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 rounded-t-2xl">
-          <Link
+    <div className="glass rounded-xl overflow-hidden group hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2">
+      <div className="h-48 md:h-56 relative overflow-hidden bg-[#181818] z-0">
+        <img 
+          src={imgUrl} 
+          alt={title} 
+          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+          <a
             href={gitUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-14 w-14 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black text-white transition-all duration-300"
           >
-            <CodeBracketIcon className="h-10 w-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#ADB7BE] cursor-pointer group-hover/link:text-white" />
-          </Link>
+            <CodeBracketIcon className="h-8 w-8" />
+          </a>
         </div>
       </div>
-      <div className="text-white rounded-b-2xl bg-[#181818] py-6 px-6">
-        <h5 className="text-xl font-bold mb-3">{title}</h5>
-        <p className="text-[#ADB7BE]">{description}</p>
+      <div className="p-6">
+        <h5 className="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">{title}</h5>
+        <p className="text-gray-400 line-clamp-3">{description}</p>
       </div>
     </div>
   );

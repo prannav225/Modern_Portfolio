@@ -1,11 +1,4 @@
-// EmailSection.js
-"use client";
-
 import React, { useState } from "react";
-import GithubIcon from "../../../public/gitHub-icon.svg";
-import LinkedinIcon from "../../../public/linkedIn-icon.svg";
-import Link from "next/link";
-import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -62,45 +55,35 @@ const EmailSection = () => {
   };
 
   return (
-    <section
-      className="py-16 md:py-24"
-      id="contact"
-    >
+    <section className="py-16 md:py-24 relative" id="contact">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[100px] -z-10"></div>
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Let&apos;s Connect
-          </h2>
-          <div className="bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-500 h-1 w-24 md:w-60 mx-auto rounded-full mb-6"></div>
-          <p className="text-[#ADB7BE] max-w-2xl mx-auto text-lg">
-            I&apos;m currently looking for new opportunities and my inbox is always open. 
-            Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div className="z-10">
-            <h3 className="text-2xl font-bold text-white mb-6">
-              Get in Touch
-            </h3>
-            <p className="text-[#ADB7BE] mb-8 max-w-md">
-              Have a project in mind or want to discuss potential opportunities? 
-              Feel free to reach out using the contact form or connect with me through my social profiles.
+            <h5 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-2">
+              Let&apos;s Connect
+            </h5>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Get In Touch
+            </h2>
+            <p className="text-[#ADB7BE] mb-8 max-w-md text-lg leading-relaxed">
+              I&apos;m currently looking for new opportunities and my inbox is always open. 
+              Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
             </p>
-            <div className="flex flex-row gap-4">
-              <Link href="https://github.com/prannav225" className="transition-transform duration-300 hover:scale-110">
-                <Image src={GithubIcon} alt="github" width={40} height={40} />
-              </Link>
-              <Link href="https://www.linkedin.com/in/prannav-m/" className="transition-transform duration-300 hover:scale-110">
-                <Image src={LinkedinIcon} alt="linkedIn" width={40} height={40} />
-              </Link>
+            <div className="flex flex-row gap-6">
+              <a href="https://github.com/prannav225" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-purple-500/50 group">
+                <img src="/gitHub-icon.svg" alt="github" width={24} height={24} className="opacity-70 group-hover:opacity-100" />
+              </a>
+              <a href="https://www.linkedin.com/in/prannav-m/" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-purple-500/50 group">
+                <img src="/linkedIn-icon.svg" alt="linkedIn" width={24} height={24} className="opacity-70 group-hover:opacity-100" />
+              </a>
             </div>
           </div>
           
-          <div className="bg-gray-800/30 p-8 rounded-2xl border border-gray-700">
+          <div className="glass p-8 rounded-2xl">
             <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-              <div className="w-full">
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium text-white ml-1">
                   Your Email
                 </label>
                 <input
@@ -108,12 +91,12 @@ const EmailSection = () => {
                   name="email"
                   id="email"
                   required
-                  placeholder="sample@example.com"
-                  className="bg-[#18191E] border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-4"
+                  placeholder="name@example.com"
+                  className="bg-black/40 border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-4 transition-all duration-300 focus:bg-black/60"
                 />
               </div>
-              <div>
-                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-white">
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-medium text-white ml-1">
                   Subject
                 </label>
                 <input
@@ -121,39 +104,38 @@ const EmailSection = () => {
                   name="subject"
                   id="subject"
                   required
-                  placeholder="Enter your subject here..."
-                  className="bg-[#18191E] border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-4"
+                  placeholder="Just saying hi!"
+                  className="bg-black/40 border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-4 transition-all duration-300 focus:bg-black/60"
                 />
               </div>
-              <div>
-                <label htmlFor="message" className="block mb-2 text-sm font-medium text-white">
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium text-white ml-1">
                   Message
                 </label>
                 <textarea
                   name="message"
                   id="message"
-                  placeholder="Leave your message here..."
-                  className="bg-[#18191E] border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-4"
-                  rows="5"
+                  placeholder="Let's talk about..."
+                  className="bg-black/40 border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-4 transition-all duration-300 focus:bg-black/60 min-h-[120px]"
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-gradient-to-r from-yellow-500 via-orange-300 to-sky-400 hover:from-yellow-600 hover:via-orange-400 hover:to-sky-500 text-white font-semibold py-4 px-6 rounded-lg w-full transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-lg w-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
               
               {emailSubmitted && (
-                <p className="text-green-400 text-center py-4 px-6 bg-green-900/30 rounded-lg border border-green-800">
-                  Email sent successfully! I&apos;ll get back to you soon.
+                <p className="text-green-400 text-sm font-medium animate-pulse">
+                  Email sent successfully!
                 </p>
               )}
               
               {error && (
-                <p className="text-red-400 text-center py-4 px-6 bg-red-900/30 rounded-lg border border-red-800">
+                <p className="text-red-400 text-sm font-medium">
                   {error}
                 </p>
               )}
