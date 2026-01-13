@@ -1,55 +1,57 @@
-# Pranav's Modern Portfolio
+# Naga Pranav M // Modern Portfolio
 
-A high-performance portfolio website focusing on creative engineering and modern web standards. Built with a focus on speed, motion design, and a premium user experience.
+A high-priority, "Studio-grade" portfolio website built with a focus on **Architectural Engineering** and **Glassmorphism Design**. This project leverages modern web standards to deliver a premium, high-performance experience that bridges the gap between enterprise reliability and creative motion design.
 
 ---
 
-## Technologies Used
+## Design Philosophy
 
-- **Framework & Tooling:** React 19 and Vite
-- **Styling:** Tailwind CSS 4.0
-- **Motion & Scrolling:** Lenis (Smooth Scroll) and CSS-based ambient animations
-- **Backend Services:** EmailJS for real-time contact form processing
-- **Icons:** Heroicons
+The site is built on a custom **Studio Aesthetic**:
+
+- **Architectural Clarity:** Strong use of whitespace and high-contrast typography.
+- **Structural Glassmorphism:** Every interactive card and container utilizes a `backdrop-blur-3xl` system to create tangible depth.
+- **Micro-Interactions:** Subtle button glows, smooth height-aligned grids, and deliberate entry animations using Framer Motion.
+- **Dynamic Previews:** A hybrid screenshot system that renders live website previews via Microlink API.
+
+---
+
+## Technical Stack
+
+- **Core:** React 19 + Vite (Next-gen performance)
+- **Styling:** Tailwind CSS 4.0 (Modern utility-first architecture)
+- **Animation:** Framer Motion (Orchestrated motion design)
+- **Layout:** Lenis (Global smooth scrolling)
+- **Icons:** Lucide React (Stroke-based minimalist iconography)
+- **Previews:** Microlink API (Automated dynamic project screenshots)
 
 ---
 
 ## Key Features
 
-- **Premium Interface:** A dark-themed design system utilizing ambient background glows and glassmorphism.
-- **Fluid Motion:** Integrated smooth scroll functionality for seamless navigation across all viewport sizes.
-- **Dynamic Content:** Animated typing effects that highlight core professional specialties.
-- **Project Showcase:** Detailed presentation of high-performance applications including Getransfr (P2P File Sharing) and Electronix AI.
-- **Responsive Architecture:** Fully optimized layout for mobile, tablet, and desktop environments.
-- **Integrated Communication:** Direct email delivery system with integrated validation and feedback.
+- **Pill-Nav Navigation:** A high-end, responsive pill-shaped navbar with glassmorphism and scroll-triggered states.
+- **Hybrid Gallery:** A project showcase that intelligently falls back to static optimized images if dynamic previews encounter latency.
+- **Studio-Grid UI:** Perfectly aligned, height-matched career and technical stack blocks.
+- **Optimized Hero:** A single-viewport hero section designed to fit critical information (Bio, Availability, Work Link) within 100% of the mobile screen height.
+- **P2P Showcase:** Dedicated sections for high-performance projects like **Getransfr** (WebRTC/FileSystem API).
 
 ---
 
-## Project Structure
+## Structure
 
 ```text
 src/
 ├── app/
-│   ├── components/      # Modular UI components
-│   └── globals.css     # Global styles and Tailwind imports
-├── App.jsx             # Main application layout
-├── main.jsx            # Application entry point
-└── index.css           # Custom design system and background animations
+│   ├── components/      # Glassmorphized React components
+│   └── ...
+├── App.jsx             # View orchestration
+├── main.jsx            # Entry point
+└── index.css           # Design tokens, global gradients & animations
 ```
 
----
-
-## Customizing the Design
-
-The ambient background glows are managed via the `.bg-glow` and `.bg-glow-blue` classes in `src/index.css`. These use radial gradients with specific blur and opacity values to create the atmospheric lighting effect seen throughout the site.
-
----
-
-## Contact
+## Reach Out
 
 - **Email:** [nagapranav.m@gmail.com](mailto:nagapranav.m@gmail.com)
 - **LinkedIn:** [Naga Pranav M](https://www.linkedin.com/in/prannav-m/)
 - **GitHub:** [@prannav225](https://github.com/prannav225)
 
 ---
-Built in Bengaluru.
