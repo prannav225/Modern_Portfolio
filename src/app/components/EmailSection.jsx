@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Send, Loader2 } from "lucide-react";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -9,7 +11,7 @@ const EmailSection = () => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    
+
     const data = {
       email: e.target.email.value,
       subject: e.target.subject.value,
@@ -17,37 +19,36 @@ const EmailSection = () => {
     };
 
     try {
-      // EmailJS configuration with your provided credentials
       const emailData = {
-        service_id: 'service_whbu41x',
-        template_id: 'template_eemjtfo',
-        user_id: 'FQum9PTHvXCdcSIHv',
+        service_id: "service_whbu41x",
+        template_id: "template_eemjtfo",
+        user_id: "FQum9PTHvXCdcSIHv",
         template_params: {
           from_name: data.email,
           from_email: data.email,
           subject: data.subject,
           message: data.message,
-        }
+        },
       };
 
-      // Send email using EmailJS
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(emailData),
-      });
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(emailData),
+        }
+      );
 
       if (response.ok) {
-        console.log("Email sent successfully");
         setEmailSubmitted(true);
-        e.target.reset(); // Reset form
+        e.target.reset();
       } else {
-        throw new Error('Failed to send email');
+        throw new Error("Failed to send email");
       }
     } catch (error) {
-      console.error("Email sending failed:", error);
       setError("Failed to send email. Please try again later.");
     } finally {
       setLoading(false);
@@ -55,92 +56,186 @@ const EmailSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 relative" id="contact">
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[100px] -z-10"></div>
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <div className="z-10">
-            <h5 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-2">
-              Let&apos;s Connect
-            </h5>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Get In Touch
-            </h2>
-            <p className="text-[#ADB7BE] mb-8 max-w-md text-lg leading-relaxed">
-              I&apos;m currently looking for new opportunities and my inbox is always open. 
-              Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
+    <section id="contact" className="py-24 md:py-40 relative">
+      <div className="container-custom">
+        <div className="flex flex-col mb-16 md:mb-24">
+          <motion.span
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 mb-4"
+          >
+            Contact
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-8xl font-black tracking-tighter"
+          >
+            Let's start <br />
+            <span className="text-white/20">something new.</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5"
+          >
+            <p className="text-2xl font-light text-white/40 leading-relaxed max-w-md mb-12">
+              Currently accepting new projects and consulting opportunities.
+              Usually responds within 24 hours.
             </p>
-            <div className="flex flex-row gap-6">
-              <a href="https://github.com/prannav225" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-purple-500/50 group">
-                <img src="/gitHub-icon.svg" alt="github" width={24} height={24} className="opacity-70 group-hover:opacity-100" />
-              </a>
-              <a href="https://www.linkedin.com/in/prannav-m/" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-purple-500/50 group">
-                <img src="/linkedIn-icon.svg" alt="linkedIn" width={24} height={24} className="opacity-70 group-hover:opacity-100" />
-              </a>
+
+            <div className="space-y-12">
+              <div className="flex flex-col gap-10">
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/20 mb-4">
+                    Freelance
+                  </h4>
+                  <a
+                    href="mailto:pra9v@proton.me"
+                    className="text-xl md:text-2xl font-light hover:text-white transition-colors border-b border-white/5 pb-2 block w-fit"
+                  >
+                    pra9v@proton.me
+                  </a>
+                </div>
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/20 mb-4">
+                    Corporate
+                  </h4>
+                  <a
+                    href="mailto:nagapranav.m@gmail.com"
+                    className="text-xl md:text-2xl font-light hover:text-white transition-colors border-b border-white/5 pb-2 block w-fit"
+                  >
+                    nagapranav.m@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/20 mb-6">
+                  Socials
+                </h4>
+                <div className="flex gap-8">
+                  {[
+                    { icon: Github, url: "https://github.com/prannav225" },
+                    {
+                      icon: Linkedin,
+                      url: "https://linkedin.com/in/prannav-m",
+                    },
+                  ].map((social, idx) => (
+                    <a
+                      key={idx}
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-white/40 hover:text-white transition-all transform hover:-translate-y-1"
+                    >
+                      <social.icon size={28} strokeWidth={1.5} />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-          
-          <div className="glass p-8 rounded-2xl">
-            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-white ml-1">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  placeholder="name@example.com"
-                  className="bg-black/40 border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-4 transition-all duration-300 focus:bg-black/60"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-white ml-1">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  required
-                  placeholder="Just saying hi!"
-                  className="bg-black/40 border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-4 transition-all duration-300 focus:bg-black/60"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-white ml-1">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Let's talk about..."
-                  className="bg-black/40 border border-[#33353f] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-4 transition-all duration-300 focus:bg-black/60 min-h-[120px]"
-                  required
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                disabled={loading}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-lg w-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0"
-              >
-                {loading ? "Sending..." : "Send Message"}
-              </button>
-              
-              {emailSubmitted && (
-                <p className="text-green-400 text-sm font-medium animate-pulse">
-                  Email sent successfully!
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7"
+          >
+            {emailSubmitted ? (
+              <div className="h-full flex flex-col items-center justify-center p-12 bg-white/2 border border-white/5 rounded-3xl text-center">
+                <div className="w-20 h-20 bg-white text-black rounded-full flex items-center justify-center mb-8">
+                  <Send size={32} />
+                </div>
+                <h3 className="text-4xl font-bold mb-4">Message Sent</h3>
+                <p className="text-white/40 mb-8">
+                  Thanks for reaching out. I'll get back to you shortly.
                 </p>
-              )}
-              
-              {error && (
-                <p className="text-red-400 text-sm font-medium">
-                  {error}
-                </p>
-              )}
-            </form>
-          </div>
+                <button
+                  onClick={() => setEmailSubmitted(false)}
+                  className="text-sm font-bold tracking-[0.2em] uppercase border-b border-white/20 pb-1 hover:border-white transition-all"
+                >
+                  Send Another
+                </button>
+              </div>
+            ) : (
+              <form className="space-y-12" onSubmit={handleSubmit}>
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="relative group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/20 mb-4 block">
+                      Email address
+                    </label>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      className="w-full bg-white/2 backdrop-blur-3xl border border-white/5 rounded-2xl p-6 text-xl font-light focus:outline-hidden focus:border-white/20 focus:bg-white/5 transition-all placeholder:text-white/10"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div className="relative group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/20 mb-4 block">
+                      Subject
+                    </label>
+                    <input
+                      name="subject"
+                      type="text"
+                      required
+                      className="w-full bg-white/2 backdrop-blur-3xl border border-white/5 rounded-2xl p-6 text-xl font-light focus:outline-hidden focus:border-white/20 focus:bg-white/5 transition-all placeholder:text-white/10"
+                      placeholder="What's this about?"
+                    />
+                  </div>
+                </div>
+
+                <div className="relative group">
+                  <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/20 mb-4 block">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={4}
+                    className="w-full bg-white/2 backdrop-blur-3xl border border-white/5 rounded-2xl p-6 text-xl font-light focus:outline-hidden focus:border-white/20 focus:bg-white/5 transition-all resize-none placeholder:text-white/10"
+                    placeholder="Describe your project"
+                  />
+                </div>
+
+                <div className="pt-8">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="group flex items-center gap-6 disabled:opacity-50"
+                  >
+                    <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      {loading ? (
+                        <Loader2 size={24} className="animate-spin" />
+                      ) : (
+                        <Send size={24} />
+                      )}
+                    </div>
+                    <div>
+                      <span className="text-sm font-bold tracking-[0.3em] uppercase block mb-1">
+                        Send Inquiry
+                      </span>
+                      <span className="text-[10px] text-white/20 uppercase tracking-widest font-mono">
+                        Response within 24h
+                      </span>
+                    </div>
+                  </button>
+                </div>
+                {error && (
+                  <p className="text-red-400 text-sm italic">{error}</p>
+                )}
+              </form>
+            )}
+          </motion.div>
         </div>
       </div>
     </section>

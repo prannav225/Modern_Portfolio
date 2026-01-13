@@ -9,15 +9,13 @@ import SmoothScroll from "./app/components/SmoothScroll";
 
 function App() {
   return (
-    <main className="flex min-h-screen flex-col bg-black">
+    <main className="flex min-h-screen flex-col bg-background">
       <SmoothScroll />
       <Navbar />
-      <div className="container mx-auto px-4 md:px-12 py-4 mt-24">
-        <HeroSection />
-        <AboutSection />
-        <ProjectSection />
-        <EmailSection />
-      </div>
+      <HeroSection />
+      <AboutSection />
+      <ProjectSection />
+      <EmailSection />
       <Footer />
     </main>
   );
