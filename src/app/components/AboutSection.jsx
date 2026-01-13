@@ -9,13 +9,13 @@ const AboutSection = () => {
       company: "BeePrecise",
       role: "Software Developer",
       period: "2023 – 2025",
-      desc: "IoT beehive monitoring & AI dashboards.",
+      desc: "IoT monitoring for Beehives and AI-driven sensor dashboards.",
     },
     {
       company: "Freelance",
       role: "Consultant",
       period: "2024 – Present",
-      desc: "Enterprise-grade architecture for agile startups.",
+      desc: "Architecting high-performance digital systems for startups.",
     },
   ];
 
@@ -90,77 +90,106 @@ const AboutSection = () => {
             </div>
 
             {/* Structured Info Grid */}
-            <div className="grid md:grid-cols-2 gap-20 pt-20 border-t border-white/5">
-              {/* Experience */}
-              <div className="space-y-12">
+            <div className="pt-20 border-t border-white/5">
+              <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
+                {/* Titles Row */}
                 <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20">
                   Career History
                 </h4>
-                <div className="space-y-10">
-                  {experiences.map((exp, i) => (
-                    <motion.div
-                      key={i}
-                      className="group p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl transition-all hover:bg-white/5 hover:border-white/10"
-                    >
-                      <div className="flex justify-between items-end mb-2">
-                        <h5 className="text-xl font-bold">{exp.company}</h5>
-                        <span className="text-[10px] font-mono text-white/30">
-                          {exp.period}
-                        </span>
-                      </div>
-                      <p className="text-sm text-white/20 uppercase tracking-widest font-medium mb-4">
-                        {exp.role}
-                      </p>
-                      <p className="text-white/40 font-light leading-relaxed">
-                        {exp.desc}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Skills / Tech */}
-              <div className="space-y-12">
-                <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20">
+                <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 hidden md:block">
                   Technical Stack
                 </h4>
-                <div className="flex flex-col gap-6">
+
+                {/* First Row of Cards */}
+                <div className="space-y-10">
+                  <motion.div className="group p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl transition-all hover:bg-white/5 hover:border-white/10">
+                    <div className="flex justify-between items-end mb-2">
+                      <h5 className="text-xl font-bold">
+                        {experiences[0].company}
+                      </h5>
+                      <span className="text-[10px] font-mono text-white/30">
+                        {experiences[0].period}
+                      </span>
+                    </div>
+                    <p className="text-sm text-white/20 uppercase tracking-widest font-medium mb-4">
+                      {experiences[0].role}
+                    </p>
+                    <p className="text-white/40 font-light leading-relaxed">
+                      {experiences[0].desc}
+                    </p>
+                  </motion.div>
+                </div>
+
+                <div className="space-y-10">
+                  <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 md:hidden mb-10">
+                    Technical Stack
+                  </h4>
                   <div className="p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl">
                     <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/10 block mb-6">
                       Core Foundations
                     </span>
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-3">
                       {[
                         "React / Next.js",
                         "TypeScript",
                         "Node.js",
                         "Tailwind",
+                        "Vite",
+                        "Redux",
+                        "Figma",
                       ].map((s) => (
                         <span
                           key={s}
-                          className="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-xs font-light text-white/60"
+                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[10px] font-light text-white/60"
                         >
                           {s}
                         </span>
                       ))}
                     </div>
                   </div>
+                </div>
 
+                {/* Second Row of Cards */}
+                <div className="space-y-10">
+                  <motion.div className="group p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl transition-all hover:bg-white/5 hover:border-white/10">
+                    <div className="flex justify-between items-end mb-2">
+                      <h5 className="text-xl font-bold">
+                        {experiences[1].company}
+                      </h5>
+                      <span className="text-[10px] font-mono text-white/30">
+                        {experiences[1].period}
+                      </span>
+                    </div>
+                    <p className="text-sm text-white/20 uppercase tracking-widest font-medium mb-4">
+                      {experiences[1].role}
+                    </p>
+                    <p className="text-white/40 font-light leading-relaxed">
+                      {experiences[1].desc}
+                    </p>
+                  </motion.div>
+                </div>
+
+                <div className="space-y-10">
                   <div className="p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl">
                     <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/10 block mb-6">
                       Advanced Systems
                     </span>
-                    <div className="flex flex-wrap gap-4">
-                      {["WebRTC", "Socket.IO", "CI / CD", "AI Integration"].map(
-                        (s) => (
-                          <span
-                            key={s}
-                            className="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-xs font-light text-white/60"
-                          >
-                            {s}
-                          </span>
-                        )
-                      )}
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        "WebRTC",
+                        "Nest.js",
+                        "Socket.IO",
+                        "CI / CD",
+                        "AI Integration",
+                        "JWT Auth",
+                      ].map((s) => (
+                        <span
+                          key={s}
+                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[10px] font-light text-white/60"
+                        >
+                          {s}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>

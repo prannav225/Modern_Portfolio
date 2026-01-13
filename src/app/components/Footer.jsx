@@ -58,13 +58,21 @@ const Footer = () => {
                 Elsewhere
               </span>
               <div className="flex flex-col gap-3">
-                {["GitHub", "LinkedIn", "Twitter"].map((social) => (
+                {[
+                  { name: "GitHub", url: "https://github.com/prannav225" },
+                  {
+                    name: "LinkedIn",
+                    url: "https://linkedin.com/in/prannav-m",
+                  },
+                ].map((social) => (
                   <a
-                    key={social}
-                    href="#"
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-base text-white/40 hover:text-white transition-colors duration-300 w-fit"
                   >
-                    {social}
+                    {social.name}
                   </a>
                 ))}
               </div>

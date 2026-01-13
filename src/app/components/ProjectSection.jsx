@@ -8,7 +8,7 @@ const ProjectsData = [
     image: "/projects/getransfr.jpg",
     title: "Getransfr - File Sharing App",
     description:
-      "High-performance P2P file-sharing platform with WebRTC data channels, real-time discovery, and drag-and-drop support.",
+      "High-performance P2P file-sharing platform using WebRTC, File System Access API, and Screen Wake Lock to enable seamless, direct-to-disk transfers.",
     tag: ["All", "Web"],
     gitUrl: "https://getransfr.vercel.app",
     usePreview: false,
