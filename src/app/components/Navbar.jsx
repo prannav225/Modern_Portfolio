@@ -23,12 +23,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 md:p-6 bg-linear-to-b from-[#0c0c0b] to-transparent pointer-events-none">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-2 md:p-6 bg-linear-to-b from-[#0c0c0b] to-transparent pointer-events-none">
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`flex items-center justify-between w-full max-w-5xl px-6 py-3 md:px-8 md:py-4 transition-all duration-700 rounded-full border border-white/5 pointer-events-auto ${
+        className={`flex items-center justify-between w-full max-w-5xl px-5 py-2 md:px-8 md:py-4 transition-all duration-700 rounded-full border border-white/5 pointer-events-auto ${
           scrolled
             ? "bg-white/5 backdrop-blur-2xl shadow-2xl border-white/10"
             : "bg-transparent backdrop-blur-none"
@@ -88,7 +88,7 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-24 left-6 right-6 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl p-10 md:hidden z-50 pointer-events-auto shadow-2xl"
+            className="absolute top-20 left-6 right-6 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl p-10 md:hidden z-50 pointer-events-auto shadow-2xl"
           >
             <div className="flex flex-col gap-8 items-center text-center">
               {navLinks.map((link) => (
