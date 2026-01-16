@@ -10,7 +10,8 @@ const ProjectsData = [
     description:
       "High-performance P2P file-sharing platform using WebRTC, File System Access API, and Screen Wake Lock to enable seamless, direct-to-disk transfers.",
     tag: ["All", "Web"],
-    gitUrl: "https://getransfr.vercel.app",
+    liveUrl: "https://getransfr.vercel.app",
+    gitUrl: "https://github.com/prannav225/getransfr",
     usePreview: false,
   },
   {
@@ -20,7 +21,8 @@ const ProjectsData = [
     description:
       "YouTube-style video streaming interface with search, playback, and category filtering using RapidAPI.",
     tag: ["All", "Web"],
-    gitUrl: "https://youtube-clone-theta-nine.vercel.app/",
+    liveUrl: "https://youtube-clone-theta-nine.vercel.app/",
+    gitUrl: "https://github.com/prannav225/youtube-clone",
     usePreview: false,
   },
   {
@@ -30,7 +32,7 @@ const ProjectsData = [
     description:
       "Modern, responsive business website for a dental clinic with appointment sections and SEO optimization.",
     tag: ["All", "Web"],
-    gitUrl: "https://beyondental.in/",
+    liveUrl: "https://beyondental.in/",
     usePreview: true,
   },
   {
@@ -40,7 +42,7 @@ const ProjectsData = [
     description:
       "Business website for a computer retail & services provider designed to improve local discoverability.",
     tag: ["All", "Web"],
-    gitUrl: "https://pragathicomputers.com/",
+    liveUrl: "https://pragathicomputers.com/",
     usePreview: true,
   },
   {
@@ -50,7 +52,7 @@ const ProjectsData = [
     description:
       "AI-powered hardware design tool offering instant datasheet analysis, smart component selection, and debugging insights.",
     tag: ["All", "Web"],
-    gitUrl: "https://electronix.ai/",
+    liveUrl: "https://electronix.ai/",
     usePreview: true,
   },
   {
@@ -60,7 +62,17 @@ const ProjectsData = [
     description:
       "Media platform and playbook for tech founders, deconstructing how great companies are built through storytelling and frameworks.",
     tag: ["All", "Web"],
-    gitUrl: "https://buildrightnow.com/",
+    liveUrl: "https://buildrightnow.com/",
+    usePreview: true,
+  },
+  {
+    id: 7,
+    image: "/projects/citrus.jpg",
+    title: "Citrus Clothing",
+    description:
+      "A premier Indian menswear brand specializing in contemporary fashion. The platform features a sophisticated e-commerce experience showcasing 25 years of design legacy and craftsmanship.",
+    tag: ["All", "Web"],
+    liveUrl: "https://citrusclothing.in/",
     usePreview: true,
   },
 ];
@@ -104,6 +116,7 @@ const ProjectSection = () => {
               description={project.description}
               category={project.tag[1]}
               gitUrl={project.gitUrl}
+              liveUrl={project.liveUrl}
               usePreview={project.usePreview}
             />
           ))}
