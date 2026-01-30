@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Mail } from "lucide-react";
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
@@ -30,7 +30,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-4 mb-4 md:mb-12"
+              className="flex flex-wrap items-center gap-4 mb-4 md:mb-12"
             >
               <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
                 <span className="relative flex h-2 w-2">
@@ -38,9 +38,12 @@ const HeroSection = () => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/70">
-                  Open for new projects
+                  OPEN TO OPPORTUNITIES
                 </span>
               </div>
+              <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/30">
+                Freelance • Contract • Full-time
+              </span>
             </motion.div>
 
             <motion.h1
@@ -64,46 +67,67 @@ const HeroSection = () => {
               className="max-w-2xl"
             >
               <p className="text-sm md:text-3xl font-light text-white/40 leading-[1.4] md:leading-tight mb-4 md:mb-12">
-                I build high-performance digital systems that bridge the gap
-                between
+                I build high-performance digital systems that bridge
                 <span className="text-white">
                   {" "}
-                  enterprise-grade architecture
+                  enterprise-grade engineering
                 </span>{" "}
                 and
                 <span className="text-white"> human-centric design</span>.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12">
-                <button
-                  onClick={handleDownloadCV}
-                  className="group flex items-center gap-6"
-                >
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-white text-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <Download size={20} />
-                  </div>
-                  <div className="text-left">
-                    <span className="text-xs md:text-sm font-bold tracking-[0.3em] uppercase block mb-1">
-                      Download Resume
-                    </span>
-                    <span className="text-[10px] text-white/20 uppercase tracking-widest font-mono">
-                      PDF / 2.4MB
-                    </span>
-                  </div>
-                </button>
-
-                <div className="flex flex-col gap-1">
-                  <span className="text-[10px] uppercase tracking-[0.4em] font-black text-white/20">
-                    Focus
-                  </span>
-                  <div className="flex gap-4">
-                    {["React", "Node.js", "AI"].map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-xs md:text-sm font-light text-white/60"
-                      >
-                        {tech}
+              <div className="space-y-12">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 md:gap-12">
+                  <button
+                    onClick={handleDownloadCV}
+                    className="group flex items-center gap-4 transition-all"
+                  >
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-white text-black rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-xl shadow-white/5">
+                      <Download size={20} />
+                    </div>
+                    <div className="text-left">
+                      <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase block mb-1">
+                        Resume
                       </span>
+                      <span className="text-[10px] text-white/20 uppercase tracking-widest font-mono block">
+                        PDF / 2.4MB
+                      </span>
+                    </div>
+                  </button>
+
+                  <a
+                    href="mailto:pra9v@proton.me"
+                    className="group flex items-center gap-4 transition-all"
+                  >
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-white/5 border border-white/10 backdrop-blur-md text-white rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500">
+                      <Mail size={20} />
+                    </div>
+                    <div className="text-left">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase">
+                          Hire Me
+                        </span>
+                        <span className="flex h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                      </div>
+                      <span className="text-[10px] text-white/20 uppercase tracking-widest font-mono block whitespace-nowrap">
+                        Available Now
+                      </span>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <span className="text-[10px] uppercase tracking-[0.4em] font-black text-white/10">
+                    Core Expertise
+                  </span>
+                  <div className="flex items-center gap-8">
+                    {["React", "Node", "AI"].map((tech) => (
+                      <div key={tech} className="flex items-center gap-2">
+                        <div className="w-1 h-1 rounded-full bg-white/20"></div>
+                        <span className="text-xs md:text-sm font-light text-white/40 tracking-wide uppercase">
+                          {tech}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>

@@ -39,7 +39,7 @@ const EmailSection = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(emailData),
-        }
+        },
       );
 
       if (response.ok) {
@@ -85,16 +85,29 @@ const EmailSection = () => {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <p className="text-2xl font-light text-white/40 leading-relaxed max-w-md mb-12">
-              Currently accepting new projects and consulting opportunities.
-              Usually responds within 24 hours.
+            <p className="text-2xl font-light text-white/40 leading-relaxed max-w-md mb-8">
+              Currently open to freelance projects, contract work, and full-time
+              roles. I usually respond within 24 hours.
             </p>
+
+            <div className="flex flex-col gap-3 mb-12">
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/30">
+                  Available: Remote / Bengaluru
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/30">
+                  Timezone: GMT +5:30
+                </span>
+              </div>
+            </div>
 
             <div className="space-y-12">
               <div className="flex flex-col gap-10">
                 <div>
                   <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/20 mb-4">
-                    Freelance
+                    For Projects
                   </h4>
                   <a
                     href="mailto:pra9v@proton.me"
@@ -105,7 +118,7 @@ const EmailSection = () => {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/20 mb-4">
-                    Corporate
+                    For Hiring
                   </h4>
                   <a
                     href="mailto:nagapranav.m@gmail.com"

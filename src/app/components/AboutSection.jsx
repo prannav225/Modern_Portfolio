@@ -12,10 +12,10 @@ const AboutSection = () => {
       desc: "IoT monitoring for Beehives and AI-driven sensor dashboards.",
     },
     {
-      company: "Freelance",
+      company: "Freelance - Web Developer",
       role: "Consultant",
       period: "2024 – Present",
-      desc: "Architecting high-performance digital systems for startups.",
+      desc: "Designing and developing high-performance websites and web apps focused on clean UI, scalability, and maintainable code.",
     },
   ];
 
@@ -44,8 +44,8 @@ const AboutSection = () => {
               <br className="hidden md:block" /> System.
             </motion.h2>
             <p className="text-white/40 leading-relaxed font-light text-base md:text-lg max-w-sm italic">
-              "Solving complex architectural challenges through minimalist
-              design and high-performance engineering."
+              “Building scalable web systems through thoughtful design, clean
+              code, and performance-first engineering.”
             </p>
           </div>
 
@@ -59,14 +59,15 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 className="text-xl md:text-4xl font-light text-white leading-snug md:leading-[1.2] tracking-tight"
               >
-                I am <span className="text-white/40">Naga Pranav M</span>, a
-                software developer based in Bengaluru. I specialize in bridging
-                the gap between{" "}
+                I’m <span className="text-white/40">Naga Pranav M</span>, a
+                software developer based in Bengaluru. I build modern web apps
+                and websites with{" "}
+                <span className="text-white/40 italic">React/Next.js</span> —
+                focused on{" "}
                 <span className="text-white/40 underline decoration-white/10 underline-offset-8">
-                  enterprise reliability
-                </span>{" "}
-                and
-                <span className="text-white/40 italic"> agile execution</span>.
+                  performance
+                </span>
+                , clean UI, and maintainable architecture.
               </motion.p>
 
               <div className="mt-16 flex items-center gap-12">
@@ -83,7 +84,10 @@ const AboutSection = () => {
                     Status
                   </span>
                   <span className="text-sm font-light text-white/60">
-                    Available for 2026 Collaboration
+                    Avaliable for Hire
+                  </span>
+                  <span className="text-[10px] font-medium text-white/20 uppercase tracking-widest">
+                    Freelance • Full-time • Contract
                   </span>
                 </div>
               </div>
@@ -182,6 +186,8 @@ const AboutSection = () => {
                         "CI / CD",
                         "AI Integration",
                         "JWT Auth",
+                        "Supabase",
+                        "Docker",
                       ].map((s) => (
                         <span
                           key={s}

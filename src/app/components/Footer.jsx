@@ -32,7 +32,7 @@ const Footer = () => {
                 className="group flex flex-col gap-2 transition-all duration-500"
               >
                 <span className="text-[10px] uppercase tracking-[0.3em] font-black text-white/20">
-                  Freelance
+                  For Projects
                 </span>
                 <span className="text-xl md:text-2xl font-light text-white/40 group-hover:text-white transition-colors border-b border-white/5 group-hover:border-white/20 pb-1">
                   pra9v@proton.me
@@ -43,7 +43,7 @@ const Footer = () => {
                 className="group flex flex-col gap-2 transition-all duration-500"
               >
                 <span className="text-[10px] uppercase tracking-[0.3em] font-black text-white/20">
-                  Corporate
+                  For Hiring
                 </span>
                 <span className="text-xl md:text-2xl font-light text-white/40 group-hover:text-white transition-colors border-b border-white/5 group-hover:border-white/20 pb-1">
                   nagapranav.m@gmail.com

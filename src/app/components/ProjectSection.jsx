@@ -8,7 +8,7 @@ const ProjectsData = [
     image: "/projects/getransfr.jpg",
     title: "Getransfr - File Sharing App",
     description:
-      "High-performance P2P file-sharing platform using WebRTC, File System Access API, and Screen Wake Lock to enable seamless, direct-to-disk transfers.",
+      "High-performance P2P file sharing app built with WebRTC and modern browser APIs, enabling direct-to-disk transfers with seamless UX.",
     tag: ["All", "Web"],
     liveUrl: "https://getransfr.vercel.app",
     gitUrl: "https://github.com/prannav225/getransfr",
@@ -19,7 +19,7 @@ const ProjectsData = [
     image: "/projects/Youtube_Clone.jpg",
     title: "YouTube Clone",
     description:
-      "YouTube-style video streaming interface with search, playback, and category filtering using RapidAPI.",
+      "YouTube-style streaming interface with search, playback, and category browsing powered by RapidAPI.",
     tag: ["All", "Web"],
     liveUrl: "https://youtube-clone-theta-nine.vercel.app/",
     gitUrl: "https://github.com/prannav225/youtube-clone",
@@ -30,7 +30,7 @@ const ProjectsData = [
     image: "/projects/beyondental.jpg",
     title: "Beyond Dental Website",
     description:
-      "Modern, responsive business website for a dental clinic with appointment sections and SEO optimization.",
+      "Modern clinic website built for speed, SEO, and conversions. Featuring appointment-focused sections and clean UI.",
     tag: ["All", "Web"],
     liveUrl: "https://beyondental.in/",
     usePreview: true,
@@ -40,7 +40,7 @@ const ProjectsData = [
     image: "/projects/pragathi_computers.jpg",
     title: "Pragathi Computers",
     description:
-      "Business website for a computer retail & services provider designed to improve local discoverability.",
+      "Business website built to improve local visibility, trust, and lead generation for a retail & services brand.",
     tag: ["All", "Web"],
     liveUrl: "https://pragathicomputers.com/",
     usePreview: true,
@@ -50,7 +50,7 @@ const ProjectsData = [
     image: "/projects/eai.jpg",
     title: "Electronix AI",
     description:
-      "AI-powered hardware design tool offering instant datasheet analysis, smart component selection, and debugging insights.",
+      "AI-driven platform for hardware design workflows, enabling smarter datasheet analysis and component selection.",
     tag: ["All", "Web"],
     liveUrl: "https://electronix.ai/",
     usePreview: true,
@@ -60,7 +60,7 @@ const ProjectsData = [
     image: "/projects/buildrn.jpg",
     title: "Build Right Now",
     description:
-      "Media platform and playbook for tech founders, deconstructing how great companies are built through storytelling and frameworks.",
+      "Media platform for founders delivering stories, frameworks, and playbooks on building great companies.",
     tag: ["All", "Web"],
     liveUrl: "https://buildrightnow.com/",
     usePreview: true,
@@ -70,7 +70,7 @@ const ProjectsData = [
     image: "/projects/citrus.jpg",
     title: "Citrus Clothing",
     description:
-      "A premier Indian menswear brand specializing in contemporary fashion. The platform features a sophisticated e-commerce experience showcasing 25 years of design legacy and craftsmanship.",
+      "Premium e-commerce experience for a menswear brand designed to showcase legacy, craftsmanship, and products.",
     tag: ["All", "Web"],
     liveUrl: "https://citrusclothing.in/",
     usePreview: true,

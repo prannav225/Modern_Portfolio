@@ -13,13 +13,47 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id || "home");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+
+    navLinks.forEach((link) => {
+      if (link.path.startsWith("#")) {
+        const element = document.querySelector(link.path);
+        if (element) observer.observe(element);
+      } else if (link.path === "/") {
+        const hero = document.querySelector("section");
+        if (hero) observer.observe(hero);
+      }
+    });
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -46,7 +80,12 @@ const Navbar = () => {
             <a
               key={link.title}
               href={link.path}
-              className="text-[10px] uppercase tracking-[0.4em] font-black text-white/40 hover:text-white transition-all duration-300"
+              className={`text-[10px] uppercase tracking-[0.4em] font-black transition-all duration-300 ${
+                activeSection === link.path.replace("#", "") ||
+                (activeSection === "home" && link.path === "/")
+                  ? "text-white"
+                  : "text-white/40 hover:text-white"
+              }`}
             >
               {link.title}
             </a>
@@ -96,7 +135,12 @@ const Navbar = () => {
                   key={link.title}
                   href={link.path}
                   onClick={() => setNavbarOpen(false)}
-                  className="text-xs uppercase tracking-[0.5em] font-black text-white/40 hover:text-white transition-all"
+                  className={`text-xs uppercase tracking-[0.5em] font-black transition-all ${
+                    activeSection === link.path.replace("#", "") ||
+                    (activeSection === "home" && link.path === "/")
+                      ? "text-white"
+                      : "text-white/40 hover:text-white"
+                  }`}
                 >
                   {link.title}
                 </a>
