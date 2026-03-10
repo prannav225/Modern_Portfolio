@@ -8,16 +8,21 @@ import ProjectSection from "./app/components/ProjectSection";
 import SmoothScroll from "./app/components/SmoothScroll";
 import DigitalCard from "./app/components/DigitalCard";
 import DigitalCardHorizontal from "./app/components/DigitalCardHorizontal";
+import SocialPoster from "./app/components/SocialPoster";
 
 function App() {
   const isCardRoute = window.location.search.includes("card=true");
   const isCardHorizontalRoute = window.location.search.includes("card-h=true");
+  const isPosterRoute = window.location.search.includes("poster=true");
 
   if (isCardRoute) {
     return <DigitalCard />;
   }
   if (isCardHorizontalRoute) {
     return <DigitalCardHorizontal />;
+  }
+  if (isPosterRoute) {
+    return <SocialPoster />;
   }
 
   return (

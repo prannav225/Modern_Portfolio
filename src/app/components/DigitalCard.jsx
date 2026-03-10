@@ -95,7 +95,7 @@ export default function DigitalCard() {
       <div
         id="digital-card-container"
         style={{ width: "420px", height: "746px", backgroundColor: "#0c0c0b" }}
-        className="relative rounded-3xl overflow-hidden border border-white/10 shrink-0 font-body text-white flex flex-col shadow-2xl shadow-white/5"
+        className="relative rounded-3xl overflow-hidden border border-white/10 shrink-0 font-body text-white flex flex-col"
       >
         {/* Structural Background Pattern */}
         <div
@@ -113,9 +113,9 @@ export default function DigitalCard() {
         <div className="relative z-10 w-full h-full p-8 flex flex-col">
           {/* Header Section */}
           <div className="flex justify-between items-start mb-10 w-full">
-            <div className="w-14 h-14 bg-linear-to-b from-white/10 to-transparent backdrop-blur-xl border border-white/20 rounded-full flex flex-col items-center justify-center shadow-lg shadow-white/5">
-              <span className="text-[11px] font-mono tracking-[0.2em] font-black text-white/90 uppercase">
-                NPM
+            <div className="w-14 h-14 bg-linear-to-b from-white/10 to-transparent backdrop-blur-xl border border-white/20 rounded-full flex flex-col items-center justify-center">
+              <span className="text-[11px] font-mono font-black text-white/90">
+                npm _
               </span>
             </div>
 
@@ -131,7 +131,7 @@ export default function DigitalCard() {
 
           <div className="flex-1 flex flex-col justify-center w-full relative">
             {/* Pulsing Status */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-md w-fit mb-5 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-md w-fit mb-5">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -166,7 +166,7 @@ export default function DigitalCard() {
               ].map((service) => (
                 <div
                   key={service}
-                  className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm shadow-sm flex items-center justify-center"
+                  className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center"
                 >
                   <span className="text-[9px] font-bold text-white/70 tracking-widest uppercase leading-none mt-px">
                     {service}
@@ -183,7 +183,7 @@ export default function DigitalCard() {
             {/* Contact Info */}
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
                   <Phone size={13} className="text-white/70" />
                 </div>
                 <div>
@@ -197,7 +197,7 @@ export default function DigitalCard() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
                   <Mail size={13} className="text-white/70" />
                 </div>
                 <div>
@@ -211,7 +211,7 @@ export default function DigitalCard() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
                   <Globe size={13} className="text-white/70" />
                 </div>
                 <div>
@@ -227,7 +227,7 @@ export default function DigitalCard() {
 
             {/* QR Code */}
             <div className="flex flex-col items-center">
-              <div className="p-2 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-xl shadow-black/50 mb-2 overflow-hidden flex items-center justify-center">
+              <div className="p-2 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl mb-2 overflow-hidden flex items-center justify-center">
                 <QRCode
                   value="https://pra9v.site/"
                   size={74}
