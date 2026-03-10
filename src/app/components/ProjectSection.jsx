@@ -5,6 +5,17 @@ import { motion } from "framer-motion";
 const ProjectsData = [
   {
     id: 1,
+    image: "/projects/fadex.png",
+    title: "FADEX - Screenwriting Tool",
+    description:
+      "A minimalist, lightning-fast cinematic screenplay editor built with Next.js featuring industry-standard formatting, type-writer scrolling, and PDF export.",
+    tag: ["All", "Web App"],
+    gitUrl: "https://github.com/prannav225/fadex",
+    liveUrl: "https://fadex-writing.vercel.app/",
+    usePreview: true,
+  },
+  {
+    id: 2,
     image: "/projects/getransfr.jpg",
     title: "Getransfr - File Sharing App",
     description:
@@ -15,7 +26,7 @@ const ProjectsData = [
     usePreview: false,
   },
   {
-    id: 2,
+    id: 3,
     image: "/projects/Youtube_Clone.jpg",
     title: "YouTube Clone",
     description:
@@ -26,7 +37,7 @@ const ProjectsData = [
     usePreview: false,
   },
   {
-    id: 3,
+    id: 4,
     image: "/projects/beyondental.jpg",
     title: "Beyond Dental Website",
     description:
@@ -36,7 +47,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 4,
+    id: 5,
     image: "/projects/pragathi_computers.jpg",
     title: "Pragathi Computers",
     description:
@@ -46,7 +57,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 5,
+    id: 6,
     image: "/projects/eai.jpg",
     title: "Electronix AI",
     description:
@@ -56,7 +67,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 6,
+    id: 7,
     image: "/projects/buildrn.jpg",
     title: "Build Right Now",
     description:
@@ -66,7 +77,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 7,
+    id: 8,
     image: "/projects/citrus.jpg",
     title: "Citrus Clothing",
     description:
