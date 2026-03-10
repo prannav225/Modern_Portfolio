@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Mail, Globe, Sparkles } from "lucide-react";
+import { Mail, Globe, Sparkles, Phone } from "lucide-react";
 import { toPng } from "html-to-image";
 import { QRCode } from "react-qrcode-logo";
+import { jsPDF } from "jspdf";
 
 export default function DigitalCardHorizontal() {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -34,6 +35,39 @@ export default function DigitalCardHorizontal() {
     }
   };
 
+  const downloadPdf = async () => {
+    setIsDownloading(true);
+    try {
+      const element = document.getElementById(
+        "digital-card-horizontal-container",
+      );
+      if (!element) return;
+
+      const dataUrl = await toPng(element, {
+        quality: 1,
+        pixelRatio: 4, // Super high resolution for print
+        backgroundColor: "#0c0c0b",
+      });
+
+      // Standard horizontal 3.5" x 2" business card plus 0.125" bleed
+      const pdf = new jsPDF({
+        orientation: "landscape",
+        unit: "in",
+        format: [3.75, 2.125],
+      });
+
+      pdf.addImage(dataUrl, "PNG", 0, 0, 3.75, 2.125);
+      pdf.save("pranav-digital-card-horizontal-print.pdf");
+    } catch (err) {
+      console.error("Failed to generate digital card PDF:", err);
+      alert(
+        "Something went wrong while downloading the card PDF. Please try again.",
+      );
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0c0c0b] flex flex-col items-center justify-center p-8 lg:p-12">
       <div className="mb-6 text-white/50 text-sm max-w-sm text-center">
@@ -41,13 +75,23 @@ export default function DigitalCardHorizontal() {
         <p>A classic business card layout, modernized.</p>
       </div>
 
-      <button
-        onClick={downloadImage}
-        disabled={isDownloading}
-        className="mb-8 px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-full hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-wait z-50 relative"
-      >
-        {isDownloading ? "Generating Card..." : "Download Horizontal Card"}
-      </button>
+      <div className="flex gap-4 mb-8 z-50 relative">
+        <button
+          onClick={downloadImage}
+          disabled={isDownloading}
+          className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-full hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-wait"
+        >
+          {isDownloading ? "Generating..." : "Download PNG (Digital)"}
+        </button>
+
+        <button
+          onClick={downloadPdf}
+          disabled={isDownloading}
+          className="px-6 py-3 bg-white/10 text-white font-bold border border-white/20 uppercase tracking-widest text-sm rounded-full hover:bg-white/20 transition-colors disabled:opacity-50 disabled:cursor-wait"
+        >
+          {isDownloading ? "Generating..." : "Download PDF (Print)"}
+        </button>
+      </div>
 
       {/* Horizontal Digital Card Container (Standard Business Card roughly ~ 3.5:2 ratio or 16:9) */}
       <div
@@ -162,6 +206,20 @@ export default function DigitalCardHorizontal() {
                   </div>
                   <div className="text-[12px] tracking-wide text-white/95 font-medium">
                     pra9v@proton.me
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                  <Phone size={16} className="text-white/70" />
+                </div>
+                <div>
+                  <div className="text-[8px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold whitespace-nowrap">
+                    Phone / WA
+                  </div>
+                  <div className="text-[12px] tracking-wide text-white/95 font-medium">
+                    +91 9945859958
                   </div>
                 </div>
               </div>
