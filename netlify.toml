@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://prannavportfolio.netlify.app/*"
+  to = "https://pra9v.site/:splat"
+  status = 301
+  force = true
