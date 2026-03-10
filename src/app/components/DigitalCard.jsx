@@ -177,48 +177,48 @@ export default function DigitalCard() {
           </div>
 
           {/* Premium Gradient Divider */}
-          <div className="w-full h-px bg-linear-to-r from-transparent via-white/15 to-transparent my-7"></div>
+          <div className="w-full h-px bg-linear-to-r from-transparent via-white/15 to-transparent my-6"></div>
 
-          <div className="flex flex-row justify-between items-end w-full pb-1 mt-auto">
+          <div className="flex flex-row justify-between items-end w-full pb-0 mt-auto">
             {/* Contact Info */}
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3.5">
-                <div className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
-                  <Phone size={14} className="text-white/70" />
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                  <Phone size={13} className="text-white/70" />
                 </div>
                 <div>
-                  <div className="text-[9px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold whitespace-nowrap">
+                  <div className="text-[8px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold whitespace-nowrap">
                     Phone / WA
                   </div>
-                  <div className="text-[12px] tracking-wide text-white/95 font-medium">
+                  <div className="text-[11.5px] tracking-wide text-white/95 font-medium">
                     +91 9945859958
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5">
-                <div className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
-                  <Mail size={16} className="text-white/70" />
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                  <Mail size={13} className="text-white/70" />
                 </div>
                 <div>
-                  <div className="text-[9px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold">
+                  <div className="text-[8px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold">
                     Email
                   </div>
-                  <div className="text-[12px] tracking-wide text-white/95 font-medium">
+                  <div className="text-[11.5px] tracking-wide text-white/95 font-medium">
                     pra9v@proton.me
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5">
-                <div className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
-                  <Globe size={16} className="text-white/70" />
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                  <Globe size={13} className="text-white/70" />
                 </div>
                 <div>
-                  <div className="text-[9px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold">
+                  <div className="text-[8px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold">
                     Portfolio
                   </div>
-                  <div className="text-[12px] tracking-wide text-white/95 font-medium">
+                  <div className="text-[11.5px] tracking-wide text-white/95 font-medium">
                     pra9v.site
                   </div>
                 </div>
@@ -227,17 +227,17 @@ export default function DigitalCard() {
 
             {/* QR Code */}
             <div className="flex flex-col items-center">
-              <div className="p-2.5 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-xl shadow-black/50 mb-3 overflow-hidden flex items-center justify-center">
+              <div className="p-2 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-xl shadow-black/50 mb-2 overflow-hidden flex items-center justify-center">
                 <QRCode
                   value="https://pra9v.site/"
-                  size={80}
+                  size={74}
                   bgColor="transparent"
                   fgColor="#ffffff"
                   qrStyle="dots"
-                  eyeRadius={6}
+                  eyeRadius={5}
                 />
               </div>
-              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/40 text-center">
+              <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-white/40 text-center">
                 Scan to
                 <br />
                 Visit

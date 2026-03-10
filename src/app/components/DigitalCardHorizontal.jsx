@@ -135,14 +135,14 @@ export default function DigitalCardHorizontal() {
                 </span>
               </div>
 
-              <h1 className="text-[3.5rem] font-black leading-[0.9] tracking-tighter mb-2 font-heading text-transparent bg-clip-text bg-linear-to-br from-white via-white to-white/40">
+              <h1 className="text-[3.25rem] font-black leading-[0.9] tracking-tighter mb-2 font-heading text-transparent bg-clip-text bg-linear-to-br from-white via-white to-white/40">
                 PRANAV
               </h1>
-              <h2 className="text-[13px] font-bold tracking-[0.25em] text-white/50 uppercase mb-5">
+              <h2 className="text-[12px] font-bold tracking-[0.25em] text-white/50 uppercase mb-5">
                 Web Developer & Designer
               </h2>
 
-              <p className="text-[12px] font-light text-white/60 leading-relaxed max-w-[90%] mb-6">
+              <p className="text-[11.5px] font-light text-white/60 leading-relaxed max-w-[95%] mb-5">
                 I build fast, beautiful, and easy-to-use websites that help
                 businesses grow, attract more customers, and stand out online.
               </p>
@@ -180,59 +180,59 @@ export default function DigitalCardHorizontal() {
             </div>
 
             <div className="flex flex-col items-center mt-2">
-              <div className="p-3 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-xl shadow-black/50 overflow-hidden flex items-center justify-center mb-4">
+              <div className="p-2.5 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-xl shadow-black/50 overflow-hidden flex items-center justify-center mb-3">
                 <QRCode
                   value="https://pra9v.site/"
-                  size={100}
+                  size={85}
                   bgColor="transparent"
                   fgColor="#ffffff"
                   qrStyle="dots"
-                  eyeRadius={6}
+                  eyeRadius={5}
                 />
               </div>
-              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/40 text-center">
+              <span className="text-[8.5px] font-bold uppercase tracking-[0.25em] text-white/40 text-center">
                 Scan to Visit
               </span>
             </div>
 
-            <div className="flex flex-col gap-4 w-full">
-              <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
-                  <Mail size={16} className="text-white/70" />
+            <div className="flex flex-col gap-3 w-full">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                  <Mail size={13} className="text-white/70" />
                 </div>
                 <div>
                   <div className="text-[8px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold">
                     Email
                   </div>
-                  <div className="text-[12px] tracking-wide text-white/95 font-medium">
+                  <div className="text-[11.5px] tracking-wide text-white/95 font-medium">
                     pra9v@proton.me
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
-                  <Phone size={16} className="text-white/70" />
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                  <Phone size={13} className="text-white/70" />
                 </div>
                 <div>
                   <div className="text-[8px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold whitespace-nowrap">
                     Phone / WA
                   </div>
-                  <div className="text-[12px] tracking-wide text-white/95 font-medium">
+                  <div className="text-[11.5px] tracking-wide text-white/95 font-medium">
                     +91 9945859958
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
-                  <Globe size={16} className="text-white/70" />
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shadow-lg shadow-white/5">
+                  <Globe size={13} className="text-white/70" />
                 </div>
                 <div>
                   <div className="text-[8px] text-white/40 uppercase tracking-[0.2em] mb-1 font-bold">
                     Portfolio
                   </div>
-                  <div className="text-[12px] tracking-wide text-white/95 font-medium">
+                  <div className="text-[11.5px] tracking-wide text-white/95 font-medium">
                     pra9v.site
                   </div>
                 </div>
