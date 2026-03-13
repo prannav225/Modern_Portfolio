@@ -85,7 +85,7 @@ export default function SocialPoster() {
               }}
             />
 
-            <div className="relative z-10 w-full h-full p-20 flex flex-col justify-between">
+            <div className="relative z-10 w-full h-full p-16 flex flex-col justify-between">
               {/* Header */}
               <div className="flex justify-between items-start w-full">
                 <div className="w-24 h-24 bg-linear-to-b from-white/10 to-transparent backdrop-blur-xl border border-white/20 rounded-full flex flex-col items-center justify-center">
@@ -106,7 +106,7 @@ export default function SocialPoster() {
               {/* Huge Main Content block centered */}
               <div className="flex flex-col items-center justify-center -mt-8">
                 {/* Ping Status */}
-                <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-md mb-12 w-fit mx-auto">
+                <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-md mb-10 w-fit mx-auto">
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                   <span className="flex items-center gap-2 text-[15px] uppercase tracking-[0.25em] font-bold text-green-400/90">
                     <Sparkles size={16} />
@@ -114,20 +114,22 @@ export default function SocialPoster() {
                   </span>
                 </div>
 
-                <h1 className="text-[6.2rem] font-black leading-[1.05] tracking-tight mb-8 font-heading text-transparent bg-clip-text bg-linear-to-br from-white via-white to-white/40 text-center max-w-[95%] mx-auto">
-                  Upgrade Your Business With A Premium Website.
+                <h1 className="text-[5.8rem] font-black leading-none tracking-tight mb-8 font-heading text-transparent bg-clip-text bg-linear-to-br from-white via-white to-white/40 text-center max-w-[95%] mx-auto uppercase">
+                  Grow Your Business With A Custom Website & App.
                 </h1>
 
-                <p className="text-[28px] font-light text-white/50 leading-relaxed text-center max-w-[80%] mx-auto mb-16">
-                  I design and build incredibly fast, modern websites that help
-                  your business attract more customers and dominate online.
+                <p className="text-[26px] font-light text-white/50 leading-relaxed text-center max-w-[85%] mx-auto mb-10">
+                  I design and build fast, modern websites and mobile apps that
+                  help your business attract more customers, sell products
+                  online, and stand out from the competition.
                 </p>
 
                 {/* Services Grid (Giant format for print/poster) */}
                 <div className="flex flex-wrap justify-center gap-x-5 gap-y-6 max-w-[85%] mx-auto">
                   {[
-                    "Custom Websites",
-                    "E-Commerce Stores",
+                    "Business Websites",
+                    "Custom Apps",
+                    "Online Stores",
                     "Digital Branding",
                     "WordPress Sites",
                   ].map((service) => (
@@ -144,15 +146,15 @@ export default function SocialPoster() {
               </div>
 
               {/* Footer Area with Contacts and QR */}
-              <div className="w-full flex justify-between items-end mt-16 pt-16 border-t border-white/10">
+              <div className="w-full flex justify-between items-end mt-12 pt-12 border-t border-white/10">
                 {/* Contact Block */}
-                <div className="flex flex-col gap-9 pb-2">
+                <div className="flex flex-col gap-6 pb-2">
                   <div className="flex items-center gap-6">
                     <div className="w-16 h-16 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
                       <Phone size={24} className="text-white/70" />
                     </div>
                     <div>
-                      <div className="text-[14px] text-white/40 uppercase tracking-[0.25em] mb-2 font-bold whitespace-nowrap">
+                      <div className="text-[14px] text-white/40 uppercase tracking-[0.25em] mb-1 font-bold whitespace-nowrap">
                         Call / WhatsApp
                       </div>
                       <div className="text-[26px] tracking-wide text-white/95 font-medium">
@@ -166,7 +168,7 @@ export default function SocialPoster() {
                       <Globe size={24} className="text-white/70" />
                     </div>
                     <div>
-                      <div className="text-[14px] text-white/40 uppercase tracking-[0.25em] mb-2 font-bold whitespace-nowrap">
+                      <div className="text-[14px] text-white/40 uppercase tracking-[0.25em] mb-1 font-bold whitespace-nowrap">
                         View Portfolio Site
                       </div>
                       <div className="text-[26px] tracking-wide text-white/95 font-medium">
