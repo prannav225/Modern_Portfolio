@@ -95,17 +95,14 @@ const AboutSection = () => {
 
             {/* Structured Info Grid */}
             <div className="pt-20 border-t border-white/5">
-              <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
-                {/* Titles Row */}
-                <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20">
-                  Career History
-                </h4>
-                <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 hidden md:block">
-                  Technical Stack
-                </h4>
-
-                {/* First Row of Cards */}
+              <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-16 md:gap-y-10">
+                {/* Career History Column */}
                 <div className="space-y-10">
+                  <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 mb-4">
+                    Career History
+                  </h4>
+
+                  {/* First Career Card */}
                   <motion.div className="group p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl transition-all hover:bg-white/5 hover:border-white/10">
                     <div className="flex justify-between items-end mb-2">
                       <h5 className="text-xl font-bold">
@@ -122,39 +119,8 @@ const AboutSection = () => {
                       {experiences[0].desc}
                     </p>
                   </motion.div>
-                </div>
 
-                <div className="space-y-10">
-                  <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 md:hidden mb-10">
-                    Technical Stack
-                  </h4>
-                  <div className="p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl">
-                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/10 block mb-6">
-                      Core Foundations
-                    </span>
-                    <div className="flex flex-wrap gap-3">
-                      {[
-                        "React / Next.js",
-                        "TypeScript",
-                        "Node.js",
-                        "Tailwind",
-                        "Vite",
-                        "Redux",
-                        "Figma",
-                      ].map((s) => (
-                        <span
-                          key={s}
-                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[10px] font-light text-white/60"
-                        >
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Second Row of Cards */}
-                <div className="space-y-10">
+                  {/* Second Career Card */}
                   <motion.div className="group p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl transition-all hover:bg-white/5 hover:border-white/10">
                     <div className="flex justify-between items-end mb-2">
                       <h5 className="text-xl font-bold">
@@ -173,25 +139,62 @@ const AboutSection = () => {
                   </motion.div>
                 </div>
 
+                {/* Technical Stack Column */}
                 <div className="space-y-10">
+                  <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 mb-4">
+                    Technical Stack
+                  </h4>
+
+                  {/* Core Foundations */}
+                  <div className="p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl">
+                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/10 block mb-6">
+                      Core Foundations
+                    </span>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        "React / Next.js",
+                        "TypeScript",
+                        "JavaScript (ES6+)",
+                        "Tailwind",
+                        "Framer Motion",
+                        "Redux",
+                        "Vite",
+                        "Figma",
+                        "HTML5 / CSS3",
+                      ].map((s) => (
+                        <span
+                          key={s}
+                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[11px] font-medium text-white/90"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Advanced Systems */}
                   <div className="p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl">
                     <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/10 block mb-6">
                       Advanced Systems
                     </span>
                     <div className="flex flex-wrap gap-3">
                       {[
-                        "WebRTC",
+                        "Node.js",
+                        "Express.js",
                         "Nest.js",
+                        "WebRTC",
                         "Socket.IO",
+                        "REST APIs",
+                        "Git / GitHub",
+                        "Postman",
                         "CI / CD",
-                        "AI Integration",
                         "JWT Auth",
                         "Supabase",
                         "Docker",
                       ].map((s) => (
                         <span
                           key={s}
-                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[10px] font-light text-white/60"
+                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[11px] font-medium text-white/90"
                         >
                           {s}
                         </span>

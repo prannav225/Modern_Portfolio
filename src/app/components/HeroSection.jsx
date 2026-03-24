@@ -121,7 +121,7 @@ const HeroSection = () => {
                     Core Expertise
                   </span>
                   <div className="flex items-center gap-8">
-                    {["React", "Node", "AI"].map((tech) => (
+                    {["React", "Next.js", "Node"].map((tech) => (
                       <div key={tech} className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-white/20"></div>
                         <span className="text-xs md:text-sm font-light text-white/40 tracking-wide uppercase">

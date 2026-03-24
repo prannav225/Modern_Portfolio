@@ -1,4 +1,4 @@
-# Naga Pranav M // Modern Portfolio
+# Portfolio
 
 A high-priority, "Studio-grade" portfolio website built with a focus on **Architectural Engineering** and **Glassmorphism Design**. This project leverages modern web standards to deliver a premium, high-performance experience that bridges the gap between enterprise reliability and creative motion design.
 
@@ -47,11 +47,5 @@ src/
 ├── main.jsx            # Entry point
 └── index.css           # Design tokens, global gradients & animations
 ```
-
-## Reach Out
-
-- **Email:** [nagapranav.m@gmail.com](mailto:nagapranav.m@gmail.com)
-- **LinkedIn:** [Naga Pranav M](https://www.linkedin.com/in/prannav-m/)
-- **GitHub:** [@prannav225](https://github.com/prannav225)
 
 ---
