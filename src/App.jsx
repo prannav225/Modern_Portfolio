@@ -9,12 +9,17 @@ import SmoothScroll from "./app/components/SmoothScroll";
 import DigitalCard from "./app/components/DigitalCard";
 import DigitalCardHorizontal from "./app/components/DigitalCardHorizontal";
 import SocialPoster from "./app/components/SocialPoster";
+import ViewResume from "./app/components/ViewResume";
 
 function App() {
   const isCardRoute = window.location.search.includes("card=true");
   const isCardHorizontalRoute = window.location.search.includes("card-h=true");
   const isPosterRoute = window.location.search.includes("poster=true");
+  const isResumeRoute = window.location.search.includes("resume=true");
 
+  if (isResumeRoute) {
+    return <ViewResume />;
+  }
   if (isCardRoute) {
     return <DigitalCard />;
   }

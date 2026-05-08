@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { ArrowRight, Download, Mail, FileJson } from "lucide-react";
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
@@ -78,22 +78,22 @@ const HeroSection = () => {
 
               <div className="space-y-12">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 md:gap-12">
-                  <button
-                    onClick={handleDownloadCV}
+                  <a
+                    href="?resume=true"
                     className="group flex items-center gap-4 transition-all"
                   >
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-white text-black rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-xl shadow-white/5">
-                      <Download size={20} />
+                      <FileJson size={20} />
                     </div>
                     <div className="text-left">
                       <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase block mb-1">
                         Resume
                       </span>
                       <span className="text-[10px] text-white/20 uppercase tracking-widest font-mono block">
-                        PDF / 2.4MB
+                        VIEW INTERACTIVE
                       </span>
                     </div>
-                  </button>
+                  </a>
 
                   <a
                     href="mailto:pra9v@proton.me"

@@ -58,24 +58,26 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-2 md:p-6 bg-linear-to-b from-[#0c0c0b] to-transparent pointer-events-none">
-      <motion.div
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      <div
         className={`flex items-center justify-between w-full max-w-5xl px-5 py-2 md:px-8 md:py-4 transition-all duration-700 rounded-full border border-white/5 pointer-events-auto ${
           scrolled
             ? "bg-white/5 backdrop-blur-2xl shadow-2xl border-white/10"
             : "bg-transparent backdrop-blur-none"
         }`}
       >
-        <a href="/" className="group flex items-center gap-2">
-          <span className="text-[10px] sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.3em] uppercase transition-all group-hover:tracking-[0.5em]">
-            Naga Pranav M<span className="text-white/20">.</span>
-          </span>
-        </a>
+        <div className="flex-1">
+          <a href="/" className="group flex items-center gap-2">
+            <p
+              className="text-sm tracking-widest"
+              style={{ fontFamily: "'Fira Code', monospace" }}
+            >
+              npm _
+            </p>
+          </a>
+        </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
+        {/* Desktop Nav - Middle */}
+        <div className="hidden md:flex flex-1 justify-center items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.title}
@@ -90,7 +92,17 @@ const Navbar = () => {
               {link.title}
             </a>
           ))}
-          <div className="flex items-center gap-6 ml-4 border-l border-white/5 pl-8">
+        </div>
+
+        {/* Desktop Nav - Right */}
+        <div className="hidden md:flex flex-1 justify-end items-center gap-6">
+          <a
+            href="/?resume=true"
+            className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] font-black bg-white/5 border border-white/10 px-4 py-1 rounded-full hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Resume
+          </a>
+          <div className="flex items-center gap-6 border-l border-white/5 pl-6">
             <a
               href="https://github.com/prannav225"
               target="_blank"
@@ -111,13 +123,15 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          onClick={() => setNavbarOpen(!navbarOpen)}
-          className="md:hidden p-2 text-white/40 hover:text-white transition-colors"
-        >
-          {navbarOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </motion.div>
+        <div className="md:hidden">
+          <button
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className="p-2 text-white/40 hover:text-white transition-colors"
+          >
+            {navbarOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -145,6 +159,13 @@ const Navbar = () => {
                   {link.title}
                 </a>
               ))}
+              <a
+                href="/?resume=true"
+                onClick={() => setNavbarOpen(false)}
+                className="text-[10px] uppercase tracking-[0.3em] font-black bg-white/10 border border-white/10 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all"
+              >
+                Resume
+              </a>
               <div className="flex gap-10 mt-6 pt-8 border-t border-white/5 w-full justify-center">
                 <a
                   href="https://github.com/prannav225"
