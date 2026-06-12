@@ -61,7 +61,7 @@ export const resumeData = {
     {
       name: "Wishcraft",
       desc: "Personalized Website Builder for Special Occasions",
-      link: "https://wishcraft-marketing-site.vercel.app/",
+      link: "https://wishcraft-seven.vercel.app/",
       tech: "React 19, TypeScript, Tailwind CSS v4, Framer Motion, Supabase, EmailJS",
       highlights: [
         "Architected a dynamic theming engine re-injecting CSS variables on-the-fly, enabling users to select from multiple visual themes without page reloads.",
