@@ -5,6 +5,26 @@ import { motion } from "framer-motion";
 const ProjectsData = [
   {
     id: 1,
+    image: "/projects/wishcraft.jpg",
+    title: "Wishcraft - Digital Experience Creator",
+    description:
+      "An interactive web platform enabling users to transform memories into magical digital cards and bespoke surprise experiences.",
+    tag: ["All", "Web App"],
+    liveUrl: "https://wishcraft-seven.vercel.app/",
+    usePreview: true,
+  },
+  {
+    id: 2,
+    image: "/projects/buckflo.jpg",
+    title: "buckflo - Private Finance Tracker",
+    description:
+      "A private, offline-first personal finance PWA & Android app to track expenses, savings goals, and budgets entirely on-device with zero cloud tracking.",
+    tag: ["All", "PWA / Android"],
+    liveUrl: "https://buckflo.com",
+    usePreview: true,
+  },
+  {
+    id: 3,
     image: "/projects/fadex.png",
     title: "FADEX - Screenwriting Tool",
     description:
@@ -15,7 +35,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 2,
+    id: 4,
     image: "/projects/getransfr.jpg",
     title: "Getransfr - File Sharing App",
     description:
@@ -26,7 +46,7 @@ const ProjectsData = [
     usePreview: false,
   },
   {
-    id: 3,
+    id: 5,
     image: "/projects/Youtube_Clone.jpg",
     title: "YouTube Clone",
     description:
@@ -37,7 +57,7 @@ const ProjectsData = [
     usePreview: false,
   },
   {
-    id: 4,
+    id: 6,
     image: "/projects/beyondental.jpg",
     title: "Beyond Dental Website",
     description:
@@ -47,7 +67,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 5,
+    id: 7,
     image: "/projects/pragathi_computers.jpg",
     title: "Pragathi Computers",
     description:
@@ -57,7 +77,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 6,
+    id: 8,
     image: "/projects/eai.jpg",
     title: "Electronix AI",
     description:
@@ -67,7 +87,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 7,
+    id: 9,
     image: "/projects/buildrn.jpg",
     title: "Build Right Now",
     description:
@@ -77,7 +97,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 8,
+    id: 10,
     image: "/projects/citrus.jpg",
     title: "Citrus Clothing",
     description:
