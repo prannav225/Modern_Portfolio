@@ -6,16 +6,25 @@ import { Sparkles } from "lucide-react";
 const AboutSection = () => {
   const experiences = [
     {
+      index: "01",
       company: "BeePrecise",
       role: "Software Developer",
-      period: "2023 – 2025",
-      desc: "IoT monitoring for Beehives and AI-driven sensor dashboards.",
+      period: "Oct 2023 – Nov 2025",
+      desc: "Built real-time IoT monitoring dashboards for beehive systems, visualizing live sensor metrics and integrating ML prediction models for hive health classification.",
     },
     {
-      company: "Freelance - Web Developer",
-      role: "Consultant",
-      period: "2024 – Present",
-      desc: "Designing and developing high-performance websites and web apps focused on clean UI, scalability, and maintainable code.",
+      index: "02",
+      company: "Electronix AI",
+      role: "Founding Team",
+      period: "Jan 2025 – Nov 2025",
+      desc: "Contributed to product vision, workflows, initial feature architecture for a SaaS platform, and led technical hiring & onboarding.",
+    },
+    {
+      index: "03",
+      company: "Freelance Developer",
+      role: "Web Consultant",
+      period: "Dec 2025 – Present",
+      desc: "Designing and developing production-grade web applications & client websites focused on performance, accessibility, and modern UI.",
     },
   ];
 
@@ -59,18 +68,12 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 className="text-xl md:text-4xl font-light text-white leading-snug md:leading-[1.2] tracking-tight"
               >
-                I’m <span className="text-white/40">Naga Pranav M</span>, a
-                software developer based in Bengaluru. I build modern web apps
-                and websites with{" "}
-                <span className="text-white/40 italic">React/Next.js</span> —
-                focused on{" "}
-                <span className="text-white/40 underline decoration-white/10 underline-offset-8">
-                  performance
-                </span>
-                , clean UI, and maintainable architecture.
+                I’m <span className="text-white/40 font-semibold">Naga Pranav M</span>, a
+                software developer based in Bengaluru with 2+ years of experience building high-performance, real-time web applications using{" "}
+                <span className="text-white/40 italic">React, Next.js & TypeScript</span>.
               </motion.p>
 
-              <div className="mt-16 flex items-center gap-12">
+              <div className="mt-16 flex flex-wrap items-center gap-12">
                 <div className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-[0.4em] font-black text-white/20">
                     Based
@@ -84,7 +87,7 @@ const AboutSection = () => {
                     Status
                   </span>
                   <span className="text-sm font-light text-white/60">
-                    Avaliable for Hire
+                    Available for Hire
                   </span>
                   <span className="text-[10px] font-medium text-white/20 uppercase tracking-widest">
                     Freelance • Full-time • Contract
@@ -94,77 +97,67 @@ const AboutSection = () => {
             </div>
 
             {/* Structured Info Grid */}
-            <div className="pt-20 border-t border-white/5">
-              <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-16 md:gap-y-10">
+            <div className="pt-16 border-t border-white/10">
+              <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-14">
                 {/* Career History Column */}
-                <div className="space-y-10">
-                  <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 mb-4">
-                    Career History
-                  </h4>
+                <div className="space-y-8">
+                  <span className="text-[10px] uppercase tracking-[0.5em] font-black text-white/30 block mb-6">
+                    Career Experience
+                  </span>
 
-                  {/* First Career Card */}
-                  <motion.div className="group p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl transition-all hover:bg-white/5 hover:border-white/10">
-                    <div className="flex justify-between items-end mb-2">
-                      <h5 className="text-xl font-bold">
-                        {experiences[0].company}
-                      </h5>
-                      <span className="text-[10px] font-mono text-white/30">
-                        {experiences[0].period}
-                      </span>
-                    </div>
-                    <p className="text-sm text-white/20 uppercase tracking-widest font-medium mb-4">
-                      {experiences[0].role}
-                    </p>
-                    <p className="text-white/40 font-light leading-relaxed">
-                      {experiences[0].desc}
-                    </p>
-                  </motion.div>
-
-                  {/* Second Career Card */}
-                  <motion.div className="group p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl transition-all hover:bg-white/5 hover:border-white/10">
-                    <div className="flex justify-between items-end mb-2">
-                      <h5 className="text-xl font-bold">
-                        {experiences[1].company}
-                      </h5>
-                      <span className="text-[10px] font-mono text-white/30">
-                        {experiences[1].period}
-                      </span>
-                    </div>
-                    <p className="text-sm text-white/20 uppercase tracking-widest font-medium mb-4">
-                      {experiences[1].role}
-                    </p>
-                    <p className="text-white/40 font-light leading-relaxed">
-                      {experiences[1].desc}
-                    </p>
-                  </motion.div>
+                  {experiences.map((exp) => (
+                    <motion.div
+                      key={exp.company}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="group pt-6 border-t border-white/10 hover:border-white/30 transition-all duration-300"
+                    >
+                      <div className="flex justify-between items-baseline mb-2">
+                        <h4 className="text-xl font-bold tracking-tight text-white group-hover:text-white transition-colors">
+                          {exp.company}
+                        </h4>
+                        <span className="text-[10px] font-mono text-white/40 tracking-wider">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <p className="text-xs text-white/40 uppercase tracking-widest font-mono font-medium mb-3">
+                        {exp.role}
+                      </p>
+                      <p className="text-white/60 font-light text-sm leading-relaxed">
+                        {exp.desc}
+                      </p>
+                    </motion.div>
+                  ))}
                 </div>
 
                 {/* Technical Stack Column */}
-                <div className="space-y-10">
-                  <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-white/20 mb-4">
+                <div className="space-y-8">
+                  <span className="text-[10px] uppercase tracking-[0.5em] font-black text-white/30 block mb-6">
                     Technical Stack
-                  </h4>
+                  </span>
 
                   {/* Core Foundations */}
-                  <div className="p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl">
-                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/10 block mb-6">
-                      Core Foundations
+                  <div className="pt-6 border-t border-white/10">
+                    <span className="text-[11px] uppercase tracking-[0.3em] font-mono font-bold text-white/40 block mb-4">
+                      / Core & Frontend
                     </span>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2">
                       {[
-                        "React / Next.js",
+                        "React.js",
+                        "Next.js",
                         "TypeScript",
                         "JavaScript (ES6+)",
-                        "Tailwind",
+                        "Tailwind CSS",
                         "Framer Motion",
-                        "Redux",
+                        "Zustand",
+                        "React Context API",
                         "Vite",
-                        "Figma",
                         "HTML5 / CSS3",
                       ].map((s) => (
                         <span
                           key={s}
-                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[11px] font-medium text-white/90"
+                          className="px-3 py-1.5 bg-white/5 hover:bg-white hover:text-black border border-white/10 rounded-full text-xs font-mono text-white/80 transition-all duration-300 cursor-default"
                         >
                           {s}
                         </span>
@@ -172,29 +165,28 @@ const AboutSection = () => {
                     </div>
                   </div>
 
-                  {/* Advanced Systems */}
-                  <div className="p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-3xl">
-                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/10 block mb-6">
-                      Advanced Systems
+                  {/* Backend & Systems */}
+                  <div className="pt-6 border-t border-white/10">
+                    <span className="text-[11px] uppercase tracking-[0.3em] font-mono font-bold text-white/40 block mb-4">
+                      / Backend & Infrastructure
                     </span>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2">
                       {[
                         "Node.js",
                         "Express.js",
-                        "Nest.js",
                         "WebRTC",
                         "Socket.IO",
                         "REST APIs",
-                        "Git / GitHub",
-                        "Postman",
-                        "CI / CD",
-                        "JWT Auth",
                         "Supabase",
+                        "Git / GitHub",
+                        "Vercel",
+                        "Netlify",
+                        "Figma",
                         "Docker",
                       ].map((s) => (
                         <span
                           key={s}
-                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-[11px] font-medium text-white/90"
+                          className="px-3 py-1.5 bg-white/5 hover:bg-white hover:text-black border border-white/10 rounded-full text-xs font-mono text-white/80 transition-all duration-300 cursor-default"
                         >
                           {s}
                         </span>

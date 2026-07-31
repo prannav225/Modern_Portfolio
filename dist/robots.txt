@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pra9v.site/sitemap.xml

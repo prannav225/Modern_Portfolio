@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, ArrowRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Sparkles, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ProjectCard = ({
@@ -8,9 +8,11 @@ const ProjectCard = ({
   title,
   description,
   category,
+  badge,
   gitUrl,
   liveUrl,
   usePreview,
+  isFeatured = false,
 }) => {
   const mainUrl = liveUrl || gitUrl;
   const isPersonal = !!gitUrl;
@@ -31,128 +33,134 @@ const ProjectCard = ({
     }
   }, [usePreview]);
 
+  const formattedId = id < 10 ? `0${id}` : `${id}`;
+  const displayUrl = mainUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="group relative flex flex-col h-full p-6 md:p-8 bg-white/2 backdrop-blur-3xl border border-white/5 rounded-4xl hover:bg-white/5 hover:border-white/10 transition-all duration-700"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center py-8 lg:py-12 border-b border-white/5 last:border-b-0"
     >
-      {/* Top Metadata Row */}
-      <div className="flex justify-between items-start mb-6 md:mb-8">
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] font-mono text-white/20 uppercase tracking-[0.3em]">
-            / 0{id}
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.4em] font-black text-white/40">
-            {category}
-          </span>
+      {/* Left Column: Editorial Info */}
+      <div className="lg:col-span-5 flex flex-col justify-between h-full order-2 lg:order-1">
+        <div>
+          {/* Index & Badge */}
+          <div className="flex items-center gap-3 mb-4 flex-wrap">
+            <span className="text-xs font-mono text-white/40 uppercase tracking-widest font-bold">
+              /{formattedId}
+            </span>
+            <span className="text-[10px] uppercase tracking-widest font-black text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+              {category}
+            </span>
+            {badge && (
+              <span className="text-[9px] uppercase tracking-widest font-black text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 shadow-sm">
+                {badge}
+              </span>
+            )}
+            {isFeatured && !badge && (
+              <span className="inline-flex items-center gap-1.5 text-[9px] font-black tracking-widest uppercase text-amber-300 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 shadow-sm">
+                <Sparkles size={11} className="animate-pulse" /> FLAGSHIP APP
+              </span>
+            )}
+          </div>
+
+          {/* Title */}
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-normal mb-3 leading-snug text-white">
+            {title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-white/60 leading-relaxed font-light text-sm sm:text-base mb-8">
+            {description}
+          </p>
         </div>
-        <div className="flex gap-3">
-          {gitUrl && (
-            <a
-              href={gitUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/20 hover:text-white transition-colors"
-              title="View Source on GitHub"
-            >
-              <Github size={18} strokeWidth={1.5} />
-            </a>
-          )}
+
+        {/* Minimal Action Links */}
+        <div className="flex items-center gap-4 flex-wrap">
           {liveUrl && (
             <a
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/20 hover:text-white transition-colors"
-              title="Visit Live Site"
+              className="group/link inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white bg-white/10 hover:bg-white hover:text-black px-6 py-3.5 rounded-full transition-all duration-300 active:scale-95 shadow-lg"
             >
-              <ExternalLink size={18} strokeWidth={1.5} />
+              <span>Visit Live Site</span>
+              <ArrowUpRight size={16} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+            </a>
+          )}
+
+          {gitUrl && (
+            <a
+              href={gitUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white/60 hover:text-white bg-white/5 hover:bg-white/10 px-5 py-3.5 rounded-full border border-white/10 transition-all duration-300 active:scale-95"
+            >
+              <Github size={15} />
+              <span>GitHub</span>
             </a>
           )}
         </div>
       </div>
 
-      {/* Image Container - Sharp & Wide */}
-      <a
-        href={mainUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative aspect-video overflow-hidden rounded-2xl transition-all duration-700 ease-[0.16, 1, 0.3, 1] bg-white/5 shrink-0 cursor-pointer"
-      >
-        <img
-          src={imgUrl}
-          alt={title}
-          className="absolute inset-0 object-cover object-top w-full h-full transition-all duration-1000 group-hover:scale-105"
-          style={{
-            opacity: !usePreview || (showFallback && !previewLoaded) ? 1 : 0,
-          }}
-        />
+      {/* Right Column: Mac Browser Preview Window */}
+      <div className="lg:col-span-7 order-1 lg:order-2">
+        <a
+          href={mainUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block relative rounded-2xl sm:rounded-3xl border border-white/10 bg-black/60 overflow-hidden shadow-2xl hover:border-white/25 transition-all duration-500"
+        >
+          {/* Mac Header Bar */}
+          <div className="flex items-center justify-between px-4 py-3 bg-white/[0.04] border-b border-white/10">
+            <div className="flex items-center gap-2">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+            </div>
 
-        {usePreview && (
-          <img
-            src={previewUrl}
-            alt={title}
-            className="absolute inset-0 object-cover object-top w-full h-full transition-all duration-1000 group-hover:scale-105"
-            onLoad={() => setPreviewLoaded(true)}
-            onError={() => setShowFallback(true)}
-            style={{
-              opacity: previewLoaded ? 1 : 0,
-            }}
-          />
-        )}
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 border border-white/10 text-[10px] font-mono text-white/40 truncate max-w-[180px] sm:max-w-xs">
+              <Globe size={11} className="shrink-0 text-white/30" />
+              <span className="truncate">{displayUrl}</span>
+            </div>
 
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-          <span className="bg-white text-black px-6 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
-            {isPersonal ? "View Solution" : "Visit Site"}
-          </span>
-        </div>
-      </a>
-
-      {/* Project Content */}
-      <div className="mt-8 flex flex-col flex-1">
-        <h3 className="text-2xl md:text-3xl font-black -tracking-tight mb-4 uppercase leading-none">
-          {title}
-        </h3>
-
-        <div className="flex flex-col flex-1 justify-between gap-8">
-          <p className="text-white/40 text-sm md:text-base leading-relaxed font-light line-clamp-2">
-            {description}
-          </p>
-
-          <div className="flex flex-wrap gap-4 pt-4 border-t border-white/5">
-            {isPersonal && gitUrl ? (
-              <a
-                href={gitUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-start items-center gap-4 group/btn"
-              >
-                <div className="w-8 h-8 md:w-10 md:h-10 border border-white/10 rounded-full flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-black transition-all duration-500">
-                  <Github size={16} />
-                </div>
-                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-black text-white/20 group-hover/btn:text-white transition-colors">
-                  View on GitHub
-                </span>
-              </a>
-            ) : (
-              <a
-                href={liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-start items-center gap-4 group/btn"
-              >
-                <div className="w-8 h-8 md:w-10 md:h-10 border border-white/10 rounded-full flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-black transition-all duration-500">
-                  <ArrowRight size={16} />
-                </div>
-                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-black text-white/20 group-hover/btn:text-white transition-colors">
-                  Visit Live Site
-                </span>
-              </a>
-            )}
+            <div className="w-10" />
           </div>
-        </div>
+
+          {/* Screenshot Display */}
+          <div className="relative aspect-video sm:aspect-[16/10] w-full overflow-hidden bg-black/80">
+            <img
+              src={imgUrl}
+              alt={title}
+              className="absolute inset-0 object-cover object-top w-full h-full transition-all duration-1000 group-hover:scale-105"
+              style={{
+                opacity: !usePreview || (showFallback && !previewLoaded) ? 1 : 0,
+              }}
+            />
+
+            {usePreview && (
+              <img
+                src={previewUrl}
+                alt={title}
+                className="absolute inset-0 object-cover object-top w-full h-full transition-all duration-1000 group-hover:scale-105"
+                onLoad={() => setPreviewLoaded(true)}
+                onError={() => setShowFallback(true)}
+                style={{
+                  opacity: previewLoaded ? 1 : 0,
+                }}
+              />
+            )}
+
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+              <span className="bg-white text-black px-6 py-3 text-[10px] font-black uppercase tracking-widest rounded-full shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500 flex items-center gap-2">
+                Open Project <ArrowUpRight size={14} />
+              </span>
+            </div>
+          </div>
+        </a>
       </div>
     </motion.div>
   );

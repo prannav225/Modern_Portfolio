@@ -1,29 +1,29 @@
 export const resumeData = {
   name: "Naga Pranav. M",
-  title: "Frontend Developer",
+  title: "Software Developer",
   location: "Bengaluru, India",
   summary:
-    "Frontend Developer with 2+ years of experience building high-performance, real-time web applications and SPA architectures. Specialized in React.js, TypeScript, and modern frontend ecosystems, with strong expertise in cross-browser compatible interfaces, component-driven development, and seamless UI/UX implementation. Experienced with full-stack JavaScript, responsive design, and real-time systems. Strong track record of delivering production-grade solutions in fast-paced, Agile environments at startups.",
+    "Frontend Developer with 2+ years of experience building high-performance, real-time web applications and SPA architectures. Specialized in React.js, TypeScript, and modern frontend ecosystems, with strong expertise in cross-browser compatible interfaces, component-driven development, and seamless UI/UX implementation. Experienced with full-stack JavaScript, responsive design, and real-time systems. Strong track record of delivering production-grade solutions in fast-paced startup environments.",
   contact: {
     email: "nagapranav.m@gmail.com",
     mobile: "+91 9945859958",
     github: "github.com/prannav225",
     linkedin: "linkedin.com/in/prannav-m",
-    portfolio: "prannavportfolio.netlify.app",
+    portfolio: "https://pra9v.site",
   },
   skills: {
     "Core Expertise":
       "React.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, SPA Architecture, Real-Time Systems",
     Frontend:
       "Next.js, Tailwind CSS, React Router, Framer Motion, Responsive UI",
-    "State Management": "Zustand, React Context API, React Hooks",
-    "Backend & Realtime": "Node.js, Express.js, WebRTC, Socket.IO, REST APIs",
-    "Tools & Deployment": "Vite, Git, Vercel, Netlify, Figma, jsPDF",
+    "State Management": "Zustand, React Context API, React Hooks, Redux",
+    "Backend & Realtime": "Node.js, Express.js, WebRTC, Socket.IO, REST APIs, Supabase",
+    "Tools & Deployment": "Vite, Git, Vercel, Netlify, Figma, Docker, jsPDF",
   },
   experience: [
     {
       company: "BeePrecise",
-      role: "Frontend Developer",
+      role: "Software Developer",
       period: "Oct 2023 - Nov 2025",
       location: "Bengaluru, India",
       highlights: [
@@ -32,7 +32,7 @@ export const resumeData = {
         "Architected and delivered reusable, modular React components following CDD patterns.",
         "Integrated ML-based prediction models for real-time hive health classification.",
         "Managed complex application state using React Context API and hooks.",
-        "Collaborated with cross-functional teams to ship full-stack features in a startup environment.",
+        "Collaborated closely with cross-functional teams to ship full-stack features in a startup environment.",
       ],
     },
     {
@@ -48,7 +48,7 @@ export const resumeData = {
     },
     {
       company: "Freelance",
-      role: "Freelance Frontend Developer",
+      role: "Web Consultant",
       period: "Dec 2025 - Present",
       location: "Bengaluru, India",
       highlights: [
@@ -71,8 +71,19 @@ export const resumeData = {
       ],
     },
     {
+      name: "buckflo",
+      desc: "Private Personal Finance Tracker PWA & Android App",
+      link: "https://buckflo.com",
+      tech: "React, PWA, Tailwind CSS, IndexedDB, Offline-First Architecture",
+      highlights: [
+        "Architected a private, offline-first personal finance tracking PWA & Android application ensuring 100% data privacy with zero cloud tracking.",
+        "Implemented local-first data persistence using IndexedDB and Web Storage APIs for instant offline transaction logging and budget visualization.",
+        "Built responsive data dashboards with real-time expense category breakdowns, savings goal tracking, and dynamic visual reports.",
+      ],
+    },
+    {
       name: "Getransfr",
-      desc: "Peer-to-Peer File Sharing App",
+      desc: "Peer-to-Peer File Sharing PWA",
       link: "https://getransfr.vercel.app/",
       tech: "React 19, TypeScript, WebRTC, Socket.IO, Node.js, Express.js",
       highlights: [
@@ -84,7 +95,7 @@ export const resumeData = {
     },
     {
       name: "FadeX",
-      desc: "Zen-Mode Screenwriting Application",
+      desc: "Zen-Mode Screenwriting PWA",
       link: "https://fadex-writing.vercel.app/",
       tech: "Next.js 16, TypeScript, Zustand, Tailwind CSS v4, jsPDF",
       highlights: [
