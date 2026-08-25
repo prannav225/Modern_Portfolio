@@ -6,6 +6,19 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 const ProjectsData = [
   {
     id: 1,
+    image: "/projects/kodast.jpg",
+    title: "Kodast - Local Codebase AI CLI",
+    description:
+      "High-performance, local-first code intelligence CLI & REPL engine with polyglot AST parsing, hybrid vector/graph retrieval, and zero-cloud local indexing.",
+    tag: ["All", "Web Apps & PWAs"],
+    badge: "FLAGSHIP CLI TOOL",
+    liveUrl: "https://kodast.vercel.app/",
+    gitUrl: "https://github.com/prannav225/codast",
+    usePreview: true,
+    isFeatured: true,
+  },
+  {
+    id: 2,
     image: "/projects/wishcraft.jpg",
     title: "Wishcraft - Digital Experience Creator",
     description:
@@ -16,7 +29,7 @@ const ProjectsData = [
     isFeatured: true,
   },
   {
-    id: 2,
+    id: 3,
     image: "/projects/buckflo.jpg",
     title: "buckflo - Private Finance Tracker",
     description:
@@ -28,7 +41,7 @@ const ProjectsData = [
     isFeatured: true,
   },
   {
-    id: 3,
+    id: 4,
     image: "/projects/fadex.png",
     title: "FADEX - Screenwriting Tool",
     description:
@@ -39,7 +52,7 @@ const ProjectsData = [
     usePreview: true,
   },
   {
-    id: 4,
+    id: 5,
     image: "/projects/getransfr.jpg",
     title: "Getransfr - File Sharing App",
     description:
@@ -50,7 +63,7 @@ const ProjectsData = [
     usePreview: false,
   },
   {
-    id: 5,
+    id: 6,
     image: "/projects/Youtube_Clone.jpg",
     title: "YouTube Clone",
     description:

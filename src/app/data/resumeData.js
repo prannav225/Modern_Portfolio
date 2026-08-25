@@ -59,6 +59,18 @@ export const resumeData = {
   ],
   projects: [
     {
+      name: "Kodast",
+      desc: "Local-First Codebase AI CLI & Code Intelligence Engine",
+      link: "https://kodast.vercel.app/",
+      tech: "TypeScript, Node.js, SQLite, LanceDB, ts-morph, Google Gemini / Ollama",
+      highlights: [
+        "Architected a high-performance, local-first code intelligence CLI and polyglot parser supporting 15+ programming languages.",
+        "Built a multi-modal hybrid retrieval engine combining AST symbol lookups, SQLite call graph traversal, and LanceDB semantic vector search.",
+        "Implemented real-time incremental re-indexing in <30ms using debounced file watchers and local SQLite WAL mode persistence.",
+        "Engineered zero-token fast-path conversational memory, model cascade fallback, and OSC-8 terminal hyperlinks for grounded code citations.",
+      ],
+    },
+    {
       name: "Wishcraft",
       desc: "Personalized Website Builder for Special Occasions",
       link: "https://wishcraft-seven.vercel.app/",
